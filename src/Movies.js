@@ -15,6 +15,8 @@ export const Movies = ({ movieArray }) => {
             <div>{movieObj.title}</div>
             <div>{movieObj.release_date}</div>
             <div>{movieObj.original_language}</div>
+            <div>{movieObj.vote_count}</div>
+            <div>{movieObj.vote_average}</div>
           </div>
         );
       })}

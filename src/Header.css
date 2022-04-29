@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-cetegory-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.category-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-profile-wrapper {
+  display: flex;
+  gap: 15px;
+}

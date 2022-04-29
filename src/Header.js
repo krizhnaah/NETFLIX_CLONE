@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Home } from "./Home";
 import { Layout } from "./Layout";
+import { UpComing } from "./UpComing";
 
 export const Header = () => {
   return (
@@ -8,12 +9,12 @@ export const Header = () => {
       <div className="header">
         <div className="logo-cetegory-wrapper">
           <div className="logo-img">
-            <Link to={Layout}>
-              <img src="" alt="netflix"></img>
+            <Link to={"/"}>
+              <img src="./Images/netflix_full_name.jpg" alt="netflix"></img>
             </Link>
           </div>
           <div className="category">
-            <ul>
+            <ul className="category-list">
               <li>
                 <Link to={"/"}>TV SHOW</Link>
               </li>
@@ -30,17 +31,17 @@ export const Header = () => {
               </li>
               <ul>
                 <li>
-                  <Link to={"/MovieFilter/NowPlaying"}>Now Playing</Link>
+                  <Link to={"/Movie/NowPlaying"}>Now Playing</Link>
                 </li>
                 <li>
-                  <Link to={"/MovieFilter/UpComing"}>Up Coming</Link>
+                  <Link to={"/Movie/UpComing"}>Up Coming</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to={"/MovieFilter/Popular"}>Popular</Link>
+                  <Link to={"/Movie/Popular"}>Popular</Link>
                 </li>
                 <li>
-                  <Link to={"/MovieFilter/TopRated"}>Top Rated</Link>
+                  <Link to={"/Movie/TopRated"}>Top Rated</Link>
                 </li>
               </ul>
               <li>
@@ -61,6 +62,7 @@ export const Header = () => {
           </div>
         </div>
       </div>
+      <Outlet />
     </>
   );
 };

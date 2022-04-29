@@ -27,14 +27,14 @@ function App() {
   // console.log(data);
   return (
     <>
+      <Layout />
       <Routes>
-        <Route exact path="/" element={<Layout />}></Route>
-        <Route path="/Home" element={<Home />}></Route>
-        <Route path="/MovieFilter" element={<MovieFilter />}>
-          <Route path="/MovieFilter/NowPlaying" element={<NowPlaying />} />
-          <Route path="/MovieFilter/UpComing" element={<UpComing />} />
-          <Route path="/MovieFilter/TopRated" element={<TopRated />} />
-          <Route path="/MovieFilter/Popular" element={<Popular />} />
+        <Route exact path="/" element={<Home />}></Route>
+        <Route path="/Movie">
+          <Route path="/Movie/NowPlaying" element={<NowPlaying />} />
+          <Route path="/Movie/UpComing" element={<UpComing />} />
+          <Route path="/Movie/TopRated" element={<TopRated />} />
+          <Route path="/Movie/Popular" element={<Popular />} />
         </Route>
       </Routes>
     </>

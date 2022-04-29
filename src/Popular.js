@@ -4,11 +4,11 @@ import { Movies } from "./Movies";
 
 export const Popular = () => {
   const [data, setData] = useState([]);
-  const apiUpComing = api.get("movie/popular", { params: { api_key } });
+  const apiPopular = api.get("movie/popular", { params: { api_key } });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiUpComing;
+      const response = await apiPopular;
       setData(response.data.results);
     };
     data();

@@ -4,11 +4,11 @@ import { Movies } from "./Movies";
 
 export const NowPlaying = () => {
   const [data, setData] = useState([]);
-  const apiUpComing = api.get("movie/now_playing", { params: { api_key } });
+  const apiNowPlaying = api.get("movie/now_playing", { params: { api_key } });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiUpComing;
+      const response = await apiNowPlaying;
       setData(response.data.results);
     };
     data();

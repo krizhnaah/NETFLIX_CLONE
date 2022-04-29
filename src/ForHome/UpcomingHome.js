@@ -1,14 +1,14 @@
-import api, { api_key } from "./axios";
+import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
-import { Movies } from "./Movies";
+import { FirstFewMovie } from "../Movies";
 
-export const TopRated = () => {
+export const UpComingHome = () => {
   const [data, setData] = useState([]);
-  const apiTopRated = api.get("movie/top_rated", { params: { api_key } });
+  const apiUpComing = api.get("movie/upcoming", { params: { api_key } });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiTopRated;
+      const response = await apiUpComing;
       setData(response.data.results);
     };
     data();
@@ -19,7 +19,7 @@ export const TopRated = () => {
   return (
     <>
       <div className="page-container">
-        <Movies movieArray={data} />
+        <FirstFewMovie movieArray={data} />
       </div>
     </>
   );

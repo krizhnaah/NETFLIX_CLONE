@@ -5,16 +5,16 @@ export const MovieFilter = () => {
     <div className="movie-filter">
       <ul>
         <li>
-          <Link to={"NowPlaying"}>NOW PLAYING</Link>
+          <Link to={"/MovieFilter/NowPlaying"}>NOW PLAYING</Link>
         </li>
         <li>
-          <Link to={"UpComing"}>UP COMING</Link>
+          <Link to={"/MovieFilter/UpComing"}>UP COMING</Link>
         </li>
         <li>
-          <Link to={"TopRated"}>TOP RATED</Link>
+          <Link to={"/MovieFilter/TopRated"}>TOP RATED</Link>
         </li>
         <li>
-          <Link to={"Popular"}>POPULAR</Link>
+          <Link to={"/MovieFilter/Popular"}>POPULAR</Link>
         </li>
       </ul>
       <Outlet />

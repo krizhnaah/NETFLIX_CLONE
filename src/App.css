@@ -39,7 +39,7 @@
 .page-container {
   width: 90vw;
   margin: auto;
-  background-color: darkorange;
+  background-color: rgb(14, 14, 14);
   padding: 10px;
 }
 
@@ -55,7 +55,7 @@
   text-align: center;
   border: 1px white solid;
   border-radius: 15px;
-  box-shadow: 5px 5px 5px 5px #fff;
+  box-shadow: 1.5px 1px 3px #fff;
 }
 
 .image-box {

@@ -1,6 +1,8 @@
 import "./App.css";
+import "./Header.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
+
 import { Layout } from "./Layout";
 import { UpComing } from "./UpComing";
 import { TopRated } from "./TopRated";
@@ -27,12 +29,12 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Layout />}></Route>
-        <Route path="Home" element={<Home />}></Route>
-        <Route path="MovieFilter" element={<MovieFilter />}>
-          <Route path="NowPlaying" element={<NowPlaying />} />
-          <Route path="UpComing" element={<UpComing />} />
-          <Route path="TopRated" element={<TopRated />} />
-          <Route path="Popular" element={<Popular />} />
+        <Route path="/Home" element={<Home />}></Route>
+        <Route path="/MovieFilter" element={<MovieFilter />}>
+          <Route path="/MovieFilter/NowPlaying" element={<NowPlaying />} />
+          <Route path="/MovieFilter/UpComing" element={<UpComing />} />
+          <Route path="/MovieFilter/TopRated" element={<TopRated />} />
+          <Route path="/MovieFilter/Popular" element={<Popular />} />
         </Route>
       </Routes>
     </>

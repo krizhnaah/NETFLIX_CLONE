@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { FirstFewMovie } from "../Movies";
 import { Link } from "react-router-dom";
 
-export const PopularHome = () => {
+export const NowPlayingHome = () => {
   const [data, setData] = useState([]);
-  const apiPopular = api.get("movie/popular", { params: { api_key } });
+  const apiUpNowPlaying = api.get("movie/now_playing", { params: { api_key } });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiPopular;
+      const response = await apiUpNowPlaying;
       setData(response.data.results);
     };
     data();
@@ -24,7 +24,7 @@ export const PopularHome = () => {
           <FirstFewMovie movieArray={data} />
         </div>
         <div>
-          <Link to={"/Movie/Popular"}>
+          <Link to={"/Movie/NowPlaying"}>
             <span>Load More</span>
           </Link>
         </div>

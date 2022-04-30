@@ -1,5 +1,7 @@
 import { UpComingHome } from "./ForHome/UpcomingHome";
 import { TopRatedHome } from "./ForHome/TopRatedHome";
+import { NowPlayingHome } from "./ForHome/NowPlayingHome";
+import { PopularHome } from "./ForHome/PopularHome";
 import { FirstFewMovie } from "./Movies";
 
 export const Home = () => {
@@ -11,7 +13,7 @@ export const Home = () => {
             <h3>Now Streaming</h3>
           </div>
           <div>
-            <UpComingHome />
+            <NowPlayingHome />
           </div>
         </div>
         <div className="upcoming-wrap">
@@ -27,7 +29,7 @@ export const Home = () => {
             <h3>Popular</h3>
           </div>
           <div>
-            <UpComingHome />
+            <PopularHome />
           </div>
         </div>{" "}
         <div className="top-rated-wrap">

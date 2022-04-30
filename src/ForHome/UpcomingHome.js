@@ -1,6 +1,7 @@
 import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 import { FirstFewMovie } from "../Movies";
+import { Link } from "react-router-dom";
 
 export const UpComingHome = () => {
   const [data, setData] = useState([]);
@@ -19,7 +20,14 @@ export const UpComingHome = () => {
   return (
     <>
       <div className="page-container">
-        <FirstFewMovie movieArray={data} />
+        <div>
+          <FirstFewMovie movieArray={data} />
+        </div>
+        <div>
+          <Link to={"/Movie/UpComing"}>
+            <span>Load More</span>
+          </Link>
+        </div>
       </div>
     </>
   );

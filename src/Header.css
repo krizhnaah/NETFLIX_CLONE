@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 0 0 60px 0;
 }
 
 .logo-cetegory-wrapper {

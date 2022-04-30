@@ -25,7 +25,7 @@ export const UpComingHome = () => {
         </div>
         <div>
           <Link to={"/Movie/UpComing"}>
-            <span>Load More</span>
+            <span className="load-more-button">Load More</span>
           </Link>
         </div>
       </div>

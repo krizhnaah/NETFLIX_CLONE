@@ -1,7 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
-import { Home } from "./Home";
-import { Layout } from "./Layout";
-import { UpComing } from "./UpComing";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -62,7 +59,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <Outlet />
     </>
   );
 };

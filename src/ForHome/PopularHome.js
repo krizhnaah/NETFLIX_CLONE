@@ -25,7 +25,7 @@ export const PopularHome = () => {
         </div>
         <div>
           <Link to={"/Movie/Popular"}>
-            <span>Load More</span>
+            <span className="load-more-button">Load More</span>
           </Link>
         </div>
       </div>

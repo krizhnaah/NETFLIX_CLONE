@@ -25,7 +25,7 @@ export const NowPlayingHome = () => {
         </div>
         <div>
           <Link to={"/Movie/NowPlaying"}>
-            <span>Load More</span>
+            <span className="load-more-button">Load More</span>
           </Link>
         </div>
       </div>

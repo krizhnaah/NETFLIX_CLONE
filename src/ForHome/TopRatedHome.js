@@ -25,7 +25,7 @@ export const TopRatedHome = () => {
         </div>
         <div>
           <Link to={"/Movie/TopRated"}>
-            <span>Load More</span>
+            <span className="load-more-button">Load More</span>
           </Link>
         </div>
       </div>

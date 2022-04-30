@@ -8,7 +8,6 @@ import { UpComing } from "./UpComing";
 import { TopRated } from "./TopRated";
 import { NowPlaying } from "./NowPlaying";
 import { Popular } from "./Popular";
-import { MovieFilter } from "./MovieFilter";
 import { Home } from "./Home";
 import { Route, Routes } from "react-router-dom";
 
@@ -26,7 +25,7 @@ function App() {
 
   // console.log(data);
   return (
-    <>
+    <div className="page-background">
       <Layout />
       <Routes>
         <Route exact path="/" element={<Home />}></Route>
@@ -37,7 +36,7 @@ function App() {
           <Route path="/Movie/Popular" element={<Popular />} />
         </Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

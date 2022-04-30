@@ -2,7 +2,6 @@ import { UpComingHome } from "./ForHome/UpcomingHome";
 import { TopRatedHome } from "./ForHome/TopRatedHome";
 import { NowPlayingHome } from "./ForHome/NowPlayingHome";
 import { PopularHome } from "./ForHome/PopularHome";
-import { FirstFewMovie } from "./Movies";
 
 export const Home = () => {
   return (

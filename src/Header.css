@@ -1,14 +1,12 @@
 .header {
   display: flex;
+  height: 150px;
+  padding: 30px;
   justify-content: space-between;
-  padding: 0 0 60px 0;
+  background-color: black;
 }
 
 .logo-cetegory-wrapper {
-  display: flex;
-  gap: 15px;
-}
-.category-list {
   display: flex;
   gap: 15px;
 }
@@ -16,4 +14,45 @@
 .search-profile-wrapper {
   display: flex;
   gap: 15px;
+}
+
+.category-list li {
+  display: block;
+  width: 120px;
+  text-align: center;
+}
+
+.category-list {
+  display: flex;
+  gap: 15px;
+}
+
+.tv-show-menu,
+.movie-menu {
+  display: none;
+  text-align: center;
+}
+
+.tv-show-menu li,
+.movie-menu li {
+  padding: 5px 0;
+  text-align: center;
+}
+
+.tv-show-menu,
+.movie-menu {
+  position: relative;
+}
+
+.tv-show-menu ul,
+.movie-menu ul {
+  position: absolute;
+}
+
+.category-list li:nth-child(1):hover .tv-show-menu {
+  display: block;
+}
+
+.category-list li:nth-child(2):hover .movie-menu {
+  display: block;
 }

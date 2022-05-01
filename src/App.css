@@ -23,7 +23,7 @@
 .movieContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* grid-auto-rows: 1fr; */
+  grid-auto-rows: 1fr;
   gap: 10px;
 }
 
@@ -33,7 +33,7 @@
   text-align: center;
   border: 1px white solid;
   border-radius: 15px;
-  box-shadow: 0.5px 0.5px 10px -1px rgb(49, 49, 49);
+  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.2);
 }
 
 .image-box {
@@ -56,16 +56,12 @@
   border-radius: 15px;
 }
 
-.category ul ul li {
-  display: none;
-}
-
-.category ul:hover ul li {
-  display: list-item;
-}
-
 .load-more-button:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   border: rgb(0, 0, 0) 1px solid;
+}
+
+h3 {
+  color: white;
 }

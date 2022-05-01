@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <>
-      <div className="header">
+      <nav className="header">
         <div className="logo-cetegory-wrapper">
           <div className="logo-img">
             <Link to={"/"}>
@@ -14,33 +14,34 @@ export const Header = () => {
             <ul className="category-list">
               <li>
                 <Link to={"/"}>TV SHOW</Link>
+                <ul className="tv-show-menu">
+                  <li>
+                    <Link to={"/"}>Tv Seasons</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Tv Episodes</Link>
+                  </li>
+                </ul>
               </li>
-              <ul>
-                <li>
-                  <Link to={"/"}>Tv Seasons</Link>
-                </li>
-                <li>
-                  <Link to={"/"}>Tv Episodes</Link>
-                </li>
-              </ul>
               <li>
                 <Link to={"/"}>MOVIE</Link>
+                <ul className="movie-menu">
+                  <li>
+                    <Link to={"/Movie/NowPlaying"}>Now Playing</Link>
+                  </li>
+                  <li>
+                    <Link to={"/Movie/UpComing"}>Up Coming</Link>
+                  </li>
+                  <li>
+                    {" "}
+                    <Link to={"/Movie/Popular"}>Popular</Link>
+                  </li>
+                  <li>
+                    <Link to={"/Movie/TopRated"}>Top Rated</Link>
+                  </li>
+                </ul>
               </li>
-              <ul>
-                <li>
-                  <Link to={"/Movie/NowPlaying"}>Now Playing</Link>
-                </li>
-                <li>
-                  <Link to={"/Movie/UpComing"}>Up Coming</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to={"/Movie/Popular"}>Popular</Link>
-                </li>
-                <li>
-                  <Link to={"/Movie/TopRated"}>Top Rated</Link>
-                </li>
-              </ul>
+
               <li>
                 <Link to={"/"}>Recent</Link>
               </li>
@@ -58,7 +59,7 @@ export const Header = () => {
             <span>Profile</span>
           </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

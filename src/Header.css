@@ -1,9 +1,17 @@
 .header {
   display: flex;
-  height: 150px;
   padding: 30px;
+  height: 80px;
   justify-content: space-between;
   background-color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: large;
+  font-weight: 700;
+}
+
+.header > div {
+  align-items: center;
 }
 
 .logo-cetegory-wrapper {
@@ -51,8 +59,11 @@
 
 .category-list li:nth-child(1):hover .tv-show-menu {
   display: block;
+  padding: 3px;
+  position: absolute;
 }
 
 .category-list li:nth-child(2):hover .movie-menu {
   display: block;
+  position: absolute;
 }

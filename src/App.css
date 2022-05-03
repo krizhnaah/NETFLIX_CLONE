@@ -6,11 +6,10 @@
 }
 
 #root {
-  width: 100vw;
-  margin: auto;
+  width: calc(100vw-5px);
 }
 .page-background {
-  background-color: rgb(20, 20, 20);
+  background-color: black;
 }
 .page-container {
   width: 90vw;

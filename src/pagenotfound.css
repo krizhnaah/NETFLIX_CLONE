@@ -1,0 +1,25 @@
+#page-not-found {
+  height: 100vh;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#page-not-found * {
+  padding: 30px;
+}
+.page-not-found-wrapper {
+  background-color: lightgray;
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#page-404 {
+  font-size: 154px;
+}

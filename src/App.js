@@ -1,5 +1,6 @@
 import "./App.css";
 import "./Header.css";
+import "./pagenotfound.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
 
@@ -9,6 +10,7 @@ import { TopRated } from "./TopRated";
 import { NowPlaying } from "./NowPlaying";
 import { Popular } from "./Popular";
 import { Home } from "./Home";
+import PageNotFound from "./PageNotFound";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -26,15 +28,19 @@ function App() {
   // console.log(data);
   return (
     <div className="page-background">
-      <Layout />
+      {/* <Layout /> */}
       <Routes>
-        <Route exact path="/" element={<Home />}></Route>
-        <Route path="/Movie">
-          <Route path="/Movie/NowPlaying" element={<NowPlaying />} />
-          <Route path="/Movie/UpComing" element={<UpComing />} />
-          <Route path="/Movie/TopRated" element={<TopRated />} />
-          <Route path="/Movie/Popular" element={<Popular />} />
+        <Route path="/" element={<Layout />}>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route path="/Movie">
+            <Route path="/Movie/NowPlaying" element={<NowPlaying />} />
+            <Route path="/Movie/UpComing" element={<UpComing />} />
+            <Route path="/Movie/TopRated" element={<TopRated />} />
+            <Route path="/Movie/Popular" element={<Popular />} />
+          </Route>
         </Route>
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );

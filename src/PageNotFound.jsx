@@ -3,7 +3,7 @@ const PageNotFound = () => {
     <>
       <div id="page-not-found">
         <div className="page-not-found-wrapper">
-          <div id="page-404">404</div>
+          <div id="page-404">404&#33;</div>
           <div>
             <h1>Page Not Found &#9785;</h1>
             <p>

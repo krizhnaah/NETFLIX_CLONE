@@ -12,12 +12,17 @@
 .page-not-found-wrapper {
   background-color: lightgray;
   padding: 30px;
+  border-radius: 15px;
 
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 1000px;
   width: 100%;
+}
+
+.page-not-found-wrapper:hover {
+  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 #page-404 {

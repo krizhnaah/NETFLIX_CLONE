@@ -14,15 +14,15 @@
 .page-container {
   width: 90vw;
   margin: auto;
-  /* background-color: rgb(48, 48, 48); */
   padding: 10px;
   border-radius: 25px;
 }
 
 .movieContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
+  align-content: center;
   gap: 10px;
 }
 
@@ -36,16 +36,25 @@
 }
 
 .movieBox {
+  height: calc(100%-10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
   margin: 10px;
   text-align: center;
-  border: 1px white solid;
+  border: 1px rgba(255, 255, 255, 0.24) solid;
   border-radius: 15px;
-  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.082);
+}
+
+.movieBox a {
+  color: white;
 }
 
 .image-box {
   width: 100%;
+  height: 230px;
   border-radius: 15px 15px 0 0;
 }
 

@@ -1,12 +1,12 @@
-#page-not-found {
+.page-not-found {
   height: 100vh;
-  background-color: white;
+  background-color: rgb(175, 175, 175);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#page-not-found * {
+.page-not-found * {
   padding: 30px;
 }
 .page-not-found-wrapper {
@@ -27,4 +27,10 @@
 
 #page-404 {
   font-size: 154px;
+}
+
+#anchor-pagenotfound {
+  color: rgb(255, 123, 0);
+  padding: 5px;
+  margin: 0;
 }

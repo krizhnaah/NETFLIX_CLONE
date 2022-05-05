@@ -3,7 +3,7 @@ import "./Header.css";
 import "./pagenotfound.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
-
+import MovieDetails from "./MovieDetails";
 import { Layout } from "./Layout";
 import { UpComing } from "./UpComing";
 import { TopRated } from "./TopRated";
@@ -38,6 +38,10 @@ function App() {
             <Route path="/Movie/TopRated" element={<TopRated />} />
             <Route path="/Movie/Popular" element={<Popular />} />
           </Route>
+          <Route
+            path="/Movie/Movie+Details/:movieid"
+            element={<MovieDetails />}
+          />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />

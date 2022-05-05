@@ -7,7 +7,7 @@ export const Header = () => {
         <div className="logo-cetegory-wrapper">
           <div className="logo-img">
             <Link to={"/"}>
-              <img src="./Images/netflix_full_name.jpg" alt="netflix"></img>
+              <img src="./Images/netflix-logo.jpg"></img>
             </Link>
           </div>
           <div className="category">

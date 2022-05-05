@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 
 const MovieDetails = () => {
   const { movieid } = useParams();
-  const [data, setData] = useState({});
-  const apiMovieDetail = api.get(`movie/${movieid}`, { params: { api_key } });
+  const [data, setData] = useState([]);
+  const apiMovieDetail = api.get(`movie/${movieid}/videos`, {
+    params: { api_key },
+  });
 
   useEffect(() => {
     const data = async () => {
@@ -13,9 +15,10 @@ const MovieDetails = () => {
       setData(response.data.results);
     };
     data();
-  }, [{ movieid }]);
+  }, [movieid]);
 
   console.log("movie Id", data);
+
   return (
     <>
       <div className="movie-details-container">Movie Details {movieid}</div>;

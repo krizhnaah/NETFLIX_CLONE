@@ -24,7 +24,7 @@ export const TopRatedHome = () => {
           <FirstFewMovie movieArray={data} />
         </div>
         <div>
-          <Link to={"/Movie/TopRated"}>
+          <Link to={"/movie/top-rated"}>
             <span className="load-more-button">Load More</span>
           </Link>
         </div>

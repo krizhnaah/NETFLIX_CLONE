@@ -32,14 +32,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" element={<Home />}></Route>
-          <Route path="/Movie">
-            <Route path="/Movie/NowPlaying" element={<NowPlaying />} />
-            <Route path="/Movie/UpComing" element={<UpComing />} />
-            <Route path="/Movie/TopRated" element={<TopRated />} />
-            <Route path="/Movie/Popular" element={<Popular />} />
+          <Route path="/movie">
+            <Route path="/movie/now-playing" element={<NowPlaying />} />
+            <Route path="/movie/up-coming" element={<UpComing />} />
+            <Route path="/movie/top-rated" element={<TopRated />} />
+            <Route path="/movie/popular" element={<Popular />} />
           </Route>
           <Route
-            path="/Movie/Movie+Details/:movieid"
+            path="/movie/movie-detail/:movieid"
             element={<MovieDetails />}
           />
         </Route>

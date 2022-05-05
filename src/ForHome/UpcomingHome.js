@@ -24,7 +24,7 @@ export const UpComingHome = () => {
           <FirstFewMovie movieArray={data} />
         </div>
         <div>
-          <Link to={"/Movie/UpComing"}>
+          <Link to={"/Movie/up-coming"}>
             <span className="load-more-button">Load More</span>
           </Link>
         </div>

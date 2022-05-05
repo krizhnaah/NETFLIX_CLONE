@@ -38,8 +38,8 @@ export const Movies = ({ movieArray }) => {
 export function FirstFewMovie({ movieArray }) {
   console.log(movieArray);
   return (
-    <div className="movieContainer">
-      {movieArray.slice(0, 4).map((movieObj) => {
+    <div className="movieContainer-for-home">
+      {movieArray.map((movieObj) => {
         return (
           <div className="movieBox">
             <div>

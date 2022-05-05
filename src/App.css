@@ -21,9 +21,18 @@
 
 .movieContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-auto-rows: 1fr;
   gap: 10px;
+}
+
+.movieContainer-for-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  height: fit-content;
+  grid-auto-flow: row;
+  overflow-y: hidden;
 }
 
 .movieBox {

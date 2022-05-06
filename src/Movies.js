@@ -43,22 +43,34 @@ export const Movies = ({ movieArray }) => {
 export function FirstFewMovie({ movieArray }) {
   console.log(movieArray);
   return (
-    <div className="movieContainer-for-home">
+    <div className="movieContainer-home">
       {movieArray.map((movieObj) => {
         return (
           <div className="movieBox">
             <div>
-              <img
-                className="image-box"
-                src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                alt={movieObj.title}
-              />
+              <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+                <div>
+                  <img
+                    className="image-box"
+                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
+                    alt={movieObj.title}
+                  />
+                </div>
+              </Link>
             </div>
-            <div>{movieObj.title}</div>
-            <div>{movieObj.release_date}</div>
-            <div>{movieObj.original_language}</div>
-            <div>{movieObj.vote_count}</div>
-            <div>{movieObj.vote_average}</div>
+            <div>
+              <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+                <div className="movie-title">{movieObj.title}</div>
+
+                <div className="lang">{movieObj.original_language}</div>
+              </Link>
+            </div>
+            <div className="movie-quick-details">
+              <div className="rating">
+                <div>Vote&#160;&#58;&#160;{movieObj.vote_count}</div>
+                <div className="vote-avarage">{movieObj.vote_average}</div>
+              </div>
+            </div>
           </div>
         );
       })}

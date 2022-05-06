@@ -5,9 +5,12 @@
   gap: 10px;
 }
 
-.movieContainer-for-home {
+.movieContainer-home {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
   gap: 10px;
 }
 

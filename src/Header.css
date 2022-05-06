@@ -67,9 +67,12 @@
   display: block;
   padding: 3px;
   position: absolute;
+  z-index: 1;
 }
 
 .category-list li:nth-child(2):hover .movie-menu {
   display: block;
+  padding: 3px;
   position: absolute;
+  z-index: 1;
 }

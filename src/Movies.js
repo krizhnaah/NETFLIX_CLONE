@@ -9,8 +9,8 @@ export const Movies = ({ movieArray }) => {
         {movieArray.map((movieObj) => {
           return (
             <div className="movieBox">
-              <Link to={`/Movie/movie-detail/${movieObj.id}`}>
-                <div>
+              <div>
+                <Link to={`/Movie/movie-detail/${movieObj.id}`}>
                   <div>
                     <img
                       className="image-box"
@@ -18,21 +18,21 @@ export const Movies = ({ movieArray }) => {
                       alt={movieObj.title}
                     />
                   </div>
-                  <div className="movie-quick-details">
-                    <div>{movieObj.title}</div>
-                    <div className="release-rating-wrapper">
-                      <div className="release-date-lang">
-                        <div>{movieObj.release_date}</div>
-                        <div>{movieObj.original_language}</div>
-                      </div>
-                      <div className="rating">
-                        <div>{movieObj.vote_count}</div>
-                        <div>{movieObj.vote_average}</div>
-                      </div>
-                    </div>
-                  </div>
+                </Link>
+              </div>
+              <div>
+                <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+                  <div className="movie-title">{movieObj.title}</div>
+
+                  <div className="lang">{movieObj.original_language}</div>
+                </Link>
+              </div>
+              <div className="movie-quick-details">
+                <div className="rating">
+                  <div>Vote&#160;&#58;&#160;{movieObj.vote_count}</div>
+                  <div className="vote-avarage">{movieObj.vote_average}</div>
                 </div>
-              </Link>
+              </div>
             </div>
           );
         })}

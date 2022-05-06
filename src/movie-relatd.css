@@ -1,0 +1,68 @@
+.movieContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movieContainer-for-home {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movieBox a {
+  color: white;
+}
+.movie-details-container {
+  height: auto;
+  background-color: aliceblue;
+  color: black;
+}
+
+.image-box {
+  width: 150px;
+  height: 225px;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.movie-quick-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lang-rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vote-avarage {
+  text-align: center;
+  color: red;
+  background-color: white;
+  border: 3px solid red;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}
+
+.movieBox {
+  height: calc(100%-10px);
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: white;
+  margin: 10px;
+  text-align: center;
+  position: relative;
+}
+.lang,
+.movie-title {
+  text-align: start;
+}

@@ -41,9 +41,15 @@ const MovieDetails = () => {
                 <h4>{data.title}</h4>
               </div>
               <div>
-                {data.genres.map((genre) => {
+                {/* {data.genres.map((genre) => {
                   return <div>{genre.name}</div>;
-                })}
+                })} */}
+              </div>
+              <div>{data.overview}</div>
+              <div>
+                {/* {data.spoken_languages.map((lang) => {
+                  return <div>{lang.english_name}</div>;
+                })} */}
               </div>
             </div>
             <div></div>

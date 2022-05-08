@@ -78,4 +78,9 @@
 
 .movie-detail-box {
   display: flex;
+  justify-content: flex-start;
+}
+.movie-detail-box > div {
+  padding: 30px;
+  margin: 20px;
 }

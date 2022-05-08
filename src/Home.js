@@ -9,7 +9,7 @@ export const Home = () => {
       <div>
         <div className="now-streaming-wrap">
           <div>
-            <h3>Now Streaming</h3>
+            <h3 className="home-h3">Now Streaming</h3>
           </div>
           <div>
             <NowPlayingHome />
@@ -17,7 +17,7 @@ export const Home = () => {
         </div>
         <div className="upcoming-wrap">
           <div>
-            <h3>Up Coming Movies</h3>
+            <h3 className="home-h3">Up Coming Movies</h3>
           </div>
           <div>
             <UpComingHome />
@@ -25,7 +25,7 @@ export const Home = () => {
         </div>{" "}
         <div className="popular-wrap">
           <div>
-            <h3>Popular</h3>
+            <h3 className="home-h3">Popular</h3>
           </div>
           <div>
             <PopularHome />
@@ -33,7 +33,7 @@ export const Home = () => {
         </div>{" "}
         <div className="top-rated-wrap">
           <div>
-            <h3>Top Rated</h3>
+            <h3 className="home-h3">Top Rated</h3>
           </div>
           <div>
             <TopRatedHome />

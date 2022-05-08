@@ -2,6 +2,7 @@ import "./App.css";
 import "./Header.css";
 import "./pagenotfound.css";
 import "./movie-relatd.css";
+import "./Home-css.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
 import MovieDetails from "./MovieDetails";

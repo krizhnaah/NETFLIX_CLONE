@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 
 const MovieDetails = () => {
   const { movieid } = useParams();
-  const [data, setData] = useState([]);
-  const apiMovieDetail = api.get(`movie/${movieid}/videos`, {
+  const [data, setData] = useState({});
+  const apiMovieDetail = api.get(`movie/${movieid}`, {
     params: { api_key },
   });
 
   useEffect(() => {
     const data = async () => {
       const response = await apiMovieDetail;
-      setData(response.data.results);
+      setData(response.data);
     };
     data();
   }, [movieid]);
@@ -21,7 +21,36 @@ const MovieDetails = () => {
 
   return (
     <>
-      <div className="movie-details-container">Movie Details {movieid}</div>;
+      <div className="movie-details-container">
+        <div
+          className="movie-detail-box"
+          style={{
+            background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`,
+            width: "100vw",
+          }}
+        >
+          <div>
+            <img
+              src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+              alt={data.title}
+            />
+          </div>
+          <div>
+            <div>
+              <div>
+                <h4>{data.title}</h4>
+              </div>
+              <div>
+                {data.genres.map((genre) => {
+                  return <div>{genre.name}</div>;
+                })}
+              </div>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      ;
     </>
   );
 };

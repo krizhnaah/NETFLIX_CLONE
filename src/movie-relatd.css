@@ -12,6 +12,7 @@
   flex-wrap: nowrap;
   overflow: hidden;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .movieBox a {
@@ -42,9 +43,9 @@
 
 .vote-avarage {
   text-align: center;
-  color: red;
-  background-color: white;
-  border: 3px solid red;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 3px solid rgb(255, 255, 255);
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -77,10 +78,17 @@
 }
 
 .movie-detail-box {
+  color: white;
   display: flex;
   justify-content: flex-start;
 }
 .movie-detail-box > div {
   padding: 30px;
   margin: 20px;
+}
+
+.poster-image-in-movie-details img {
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.35), 4px 6px 10px rgba(0, 0, 0, 0.1),
+    -2px -4px 5px rgba(0, 0, 0, 0.35), -4px -6px 10px rgba(0, 0, 0, 0.1);
 }

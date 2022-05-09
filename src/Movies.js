@@ -42,6 +42,7 @@ export const Movies = ({ movieArray }) => {
 };
 export function FirstFewMovie({ movieArray }) {
   console.log(movieArray);
+
   return (
     <div className="movieContainer-home">
       {movieArray.map((movieObj) => {
@@ -62,7 +63,9 @@ export function FirstFewMovie({ movieArray }) {
               <Link to={`/Movie/movie-detail/${movieObj.id}`}>
                 <div className="movie-title">{movieObj.title}</div>
 
-                <div className="lang">{movieObj.original_language}</div>
+                <div className="lang">
+                  <Lang movieLang={movieObj.original_language} />
+                </div>
               </Link>
             </div>
             <div className="movie-quick-details">
@@ -77,3 +80,20 @@ export function FirstFewMovie({ movieArray }) {
     </div>
   );
 }
+
+const Lang = ({ movieLang }) => {
+  switch (movieLang) {
+    case "en":
+      return "English";
+    case "hi":
+      return "Hindi";
+    case "ja":
+      return "Japanese";
+    case "es":
+      return "Spanish";
+    case "th":
+      return "Thai";
+    default:
+      return movieLang;
+  }
+};

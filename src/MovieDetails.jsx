@@ -25,11 +25,13 @@ const MovieDetails = () => {
         <div
           className="movie-detail-box"
           style={{
-            background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`,
+            background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path}),rgba(0,0,0,0.75)`,
+
+            backgroundBlendMode: "multiply",
             width: "100vw",
           }}
         >
-          <div>
+          <div className="poster-image-in-movie-details">
             <img
               src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
               alt={data.title}
@@ -38,14 +40,20 @@ const MovieDetails = () => {
           <div>
             <div>
               <div>
-                <h4>{data.title}</h4>
+                <h1>{data.title}</h1>
               </div>
               <div>
                 {/* {data.genres.map((genre) => {
                   return <div>{genre.name}</div>;
                 })} */}
               </div>
-              <div>{data.overview}</div>
+              <div>{data.tagline}</div>
+              <div>
+                <div>
+                  <h3>Overview</h3>
+                </div>
+                <div>{data.overview}</div>
+              </div>
               <div>
                 {/* {data.spoken_languages.map((lang) => {
                   return <div>{lang.english_name}</div>;

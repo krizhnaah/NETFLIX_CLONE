@@ -8,14 +8,17 @@ const MovieDetails = () => {
   const apiMovieDetail = api.get(`movie/${movieid}`, {
     params: { api_key },
   });
-
+  const data1 = async () => {
+    const response = await apiMovieDetail;
+    console.log("response.data", response.data);
+    setData(response.data);
+  };
+  console.log("calling the data function");
+  data1();
   useEffect(() => {
-    const data = async () => {
-      const response = await apiMovieDetail;
-      setData(response.data);
-    };
-    data();
-  }, [movieid]);
+    console.log("Inside useEffect");
+  }, []);
+  if (!data) return <div>Loading..</div>;
 
   console.log("movie Id", data);
 
@@ -25,10 +28,9 @@ const MovieDetails = () => {
         <div
           className="movie-detail-box"
           style={{
-            background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path}),rgba(0,0,0,0.75)`,
-
+            background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path}),rgba(0,0,0,0.7)`,
             backgroundBlendMode: "multiply",
-            width: "100vw",
+            width: "calc(100vw-10px)",
           }}
         >
           <div className="poster-image-in-movie-details">
@@ -43,10 +45,11 @@ const MovieDetails = () => {
                 <h1>{data.title}</h1>
               </div>
               <div>
-                {/* {data.genres.map((genre) => {
+                {data.genres.map((genre) => {
                   return <div>{genre.name}</div>;
-                })} */}
+                })}
               </div>
+              <div>Release Date {data.release_date}</div>
               <div>{data.tagline}</div>
               <div>
                 <div>

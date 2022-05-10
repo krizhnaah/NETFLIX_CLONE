@@ -10,7 +10,7 @@ export const Movies = ({ movieArray }) => {
           return (
             <div className="movieBox">
               <div>
-                <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+                <Link to={`/movie/movie-detail/${movieObj.id}`}>
                   <div>
                     <img
                       className="image-box"
@@ -21,10 +21,12 @@ export const Movies = ({ movieArray }) => {
                 </Link>
               </div>
               <div>
-                <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+                <Link to={`/movie/movie-detail/${movieObj.id}`}>
                   <div className="movie-title">{movieObj.title}</div>
 
-                  <div className="lang">{movieObj.original_language}</div>
+                  <div className="lang">
+                    <Lang movieLang={movieObj.original_language} />
+                  </div>
                 </Link>
               </div>
               <div className="movie-quick-details">
@@ -49,7 +51,7 @@ export function FirstFewMovie({ movieArray }) {
         return (
           <div className="movieBox">
             <div>
-              <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+              <Link to={`/movie/movie-detail/${movieObj.id}`}>
                 <div>
                   <img
                     className="image-box"
@@ -60,7 +62,7 @@ export function FirstFewMovie({ movieArray }) {
               </Link>
             </div>
             <div>
-              <Link to={`/Movie/movie-detail/${movieObj.id}`}>
+              <Link to={`/movie/movie-detail/${movieObj.id}`}>
                 <div className="movie-title">{movieObj.title}</div>
 
                 <div className="lang">
@@ -70,7 +72,7 @@ export function FirstFewMovie({ movieArray }) {
             </div>
             <div className="movie-quick-details">
               <div className="rating">
-                <div>Vote&#160;&#58;&#160;{movieObj.vote_count}</div>
+                <div>Votes&#160;&#58;&#160;{movieObj.vote_count}</div>
                 <div className="vote-avarage">{movieObj.vote_average}</div>
               </div>
             </div>
@@ -93,6 +95,14 @@ const Lang = ({ movieLang }) => {
       return "Spanish";
     case "th":
       return "Thai";
+    case "fr":
+      return "French";
+    case "da":
+      return "Danish";
+    case "pl":
+      return "Polish";
+    case "ko":
+      return "Korean";
     default:
       return movieLang;
   }

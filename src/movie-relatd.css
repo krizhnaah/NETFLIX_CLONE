@@ -21,7 +21,7 @@
 .movie-details-container {
   height: auto;
   background-color: aliceblue;
-  color: black;
+  color: white;
 }
 
 .image-box {
@@ -68,7 +68,8 @@
   position: relative;
 }
 
-.movieBox:hover {
+.movieBox:hover,
+.movieBox:focus-within {
   transform: scale(1.03, 1.03);
 }
 

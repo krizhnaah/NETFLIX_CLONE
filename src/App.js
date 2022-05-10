@@ -6,6 +6,7 @@ import "./Home-css.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
 import MovieDetails from "./MovieDetails";
+import { TvShowLatest } from "./TvShowLatest";
 import { Layout } from "./Layout";
 import { UpComing } from "./UpComing";
 import { TopRated } from "./TopRated";

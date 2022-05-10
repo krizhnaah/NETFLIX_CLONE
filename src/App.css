@@ -9,7 +9,7 @@
   width: calc(100vw-5px);
 }
 .page-background {
-  background-color: black;
+  background-color: rgb(14, 14, 14);
 }
 .page-container {
   width: 90vw;

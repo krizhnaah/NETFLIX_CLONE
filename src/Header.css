@@ -37,6 +37,9 @@
   text-align: center;
 }
 
+.category-list a {
+  padding: 1px 5px;
+}
 .category-list {
   display: flex;
   gap: 15px;
@@ -76,4 +79,10 @@
   padding: 3px;
   position: absolute;
   z-index: 1;
+}
+
+.category-list a:focus {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border-radius: 3px;
 }

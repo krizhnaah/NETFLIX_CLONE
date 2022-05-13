@@ -13,7 +13,7 @@ export const TvShowLatest = () => {
     data();
   }, []);
 
-  console.log("Tv show latest", data);
+  // console.log("Tv show latest", data);
 
   return (
     <>

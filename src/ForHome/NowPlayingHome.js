@@ -15,7 +15,7 @@ export const NowPlayingHome = () => {
     data();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

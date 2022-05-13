@@ -14,7 +14,7 @@ export const TopRated = () => {
     data();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

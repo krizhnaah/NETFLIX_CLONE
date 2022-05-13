@@ -14,7 +14,7 @@ export const Popular = () => {
     data();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

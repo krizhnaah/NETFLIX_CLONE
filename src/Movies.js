@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 export const Movies = ({ movieArray }) => {
-  console.log("MOvie Array", movieArray);
+  // console.log("MOvie Array", movieArray);
 
   return (
     <>
@@ -20,7 +20,7 @@ export const Movies = ({ movieArray }) => {
                   </div>
                 </Link>
               </div>
-              <div>
+              <div className="movie-name">
                 <Link to={`/movie/movie-detail/${movieObj.id}`}>
                   <div className="movie-title">{movieObj.title}</div>
 
@@ -31,7 +31,9 @@ export const Movies = ({ movieArray }) => {
               </div>
               <div className="movie-quick-details">
                 <div className="rating">
-                  <div>Vote&#160;&#58;&#160;{movieObj.vote_count}</div>
+                  <div className="vote-count">
+                    Vote&#160;&#58;&#160;{movieObj.vote_count}
+                  </div>
                   <div className="vote-avarage">{movieObj.vote_average}</div>
                 </div>
               </div>
@@ -43,7 +45,7 @@ export const Movies = ({ movieArray }) => {
   );
 };
 export function FirstFewMovie({ movieArray }) {
-  console.log(movieArray);
+  // console.log(movieArray);
 
   return (
     <div className="movieContainer-home">
@@ -61,7 +63,7 @@ export function FirstFewMovie({ movieArray }) {
                 </div>
               </Link>
             </div>
-            <div>
+            <div className="movie-name">
               <Link to={`/movie/movie-detail/${movieObj.id}`}>
                 <div className="movie-title">{movieObj.title}</div>
 

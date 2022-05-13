@@ -7,13 +7,13 @@ export const Header = () => {
         <div className="logo-cetegory-wrapper">
           <div className="logo-img">
             <Link to={"/"}>
-              <img src="./Images/netflix-logo.jpg" alt="logo"></img>
+              <img src={require("./Images/netflix-logo.png")} alt="logo"></img>
             </Link>
           </div>
           <div className="category">
             <ul className="category-list">
               <li>
-                <Link to={"/"}>TV SHOW</Link>
+                <Link to={"/"}>Tv Show</Link>
                 <ul className="tv-show-menu">
                   <li>
                     <Link to={"/"}>Tv Seasons</Link>
@@ -24,7 +24,7 @@ export const Header = () => {
                 </ul>
               </li>
               <li>
-                <Link to={"/"}>MOVIE</Link>
+                <Link to={"/"}>Movie</Link>
                 <ul className="movie-menu">
                   <li>
                     <Link to={"/movie/now-playing"}>Now Playing</Link>

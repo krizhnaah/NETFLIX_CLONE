@@ -15,7 +15,7 @@ export const UpComingHome = () => {
     data();
   }, []);
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

@@ -1,8 +1,8 @@
-import api, { api_key } from "./axios";
+import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
 export const TvShowLatest = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState({});
   const apiTvShowLatest = api.get("/tv/latest", { params: { api_key } });
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const TvShowLatest = () => {
     data();
   }, []);
 
-  // console.log("Tv show latest", data);
+  console.log("Tv show latest", data);
 
   return (
     <>

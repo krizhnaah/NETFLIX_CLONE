@@ -1,24 +1,27 @@
 import { useParams } from "react-router-dom";
-import api, { api_key } from "./axios";
+import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
-import MovieCast from "./components/MovieCast";
-import MovieCrew from "./components/MovieCrew";
-import { RelatedMovies } from "./components/movies/related_movies/RelatedMovies";
+import MovieCast from "./MovieCast";
+import MovieCrew from "./MovieCrew";
+import TvCast from "./TvCast";
+import TvCrew from "./TvCrew";
 
-const MovieDetails = () => {
+const TvShowDetails = () => {
   const { movieid } = useParams();
   const [data, setData] = useState({});
-  const apiMovieDetail = api.get(`movie/${movieid}`, {
+  const apiTvShowDetails = api.get(`tv/${movieid}`, {
     params: { api_key },
   });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiMovieDetail;
+      const response = await apiTvShowDetails;
       setData(response.data);
     };
     data();
   }, []);
+
+  console.log("tvshow details", data);
 
   let hour = Math.floor(data.runtime / 60);
   let minutes = data.runtime % 60;
@@ -35,7 +38,7 @@ const MovieDetails = () => {
   // }, []);
   // if (!data1) return <div>Loading..</div>;
 
-  console.log("movie Id", data);
+  console.log("TvSHow Id", data);
 
   return (
     <>
@@ -67,9 +70,9 @@ const MovieDetails = () => {
                       return <li>{genre.name}</li>;
                     })}
                 </li>
-                <li>
-                  {hour}h{" " + minutes}m
-                </li>
+                {/* <li>
+                    {hour}h{" " + minutes}m
+                  </li> */}
               </ul>
             </div>
 
@@ -87,15 +90,12 @@ const MovieDetails = () => {
                 })}
             </div>
             <div className="movie-crew">
-              <MovieCrew creator={data.created_by} />
+              {<TvCrew creator={data.created_by} />}
             </div>
           </div>
         </div>
         <div className="casting-crew">
-          <MovieCast />
-        </div>
-        <div>
-          {/* <RelatedMovies movie_id={movieid} /> */}
+          <TvCast />
         </div>
       </div>
       ;
@@ -103,4 +103,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default TvShowDetails;

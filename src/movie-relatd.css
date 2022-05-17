@@ -1,7 +1,7 @@
 .movieContainer {
-  display: flex;
-  justify-content: var();
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-auto-flow: row;
 }
 
 .movieContainer-home {
@@ -20,7 +20,7 @@
 
 .movie-details-container {
   height: auto;
-  background-color: aliceblue;
+  background-color: black;
   color: white;
 }
 
@@ -42,7 +42,10 @@
 }
 
 .vote-avarage {
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: px;
   color: rgb(255, 255, 255);
   background-color: rgb(0, 0, 0);
   border: 3px solid rgb(255, 255, 255);
@@ -115,5 +118,6 @@ li.genres-list {
 .movie-details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: center;
+  gap: 25px;
 }

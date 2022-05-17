@@ -3,11 +3,11 @@ import "./Header.css";
 import "./pagenotfound.css";
 import "./movie-relatd.css";
 import "./Home-css.css";
-import "./css/actress.css";
+import "./css/cast_and_crew.css";
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
 import MovieDetails from "./MovieDetails";
-import { TvShowLatest } from "./TvShowLatest";
+import { TvShowLatest } from "./components/TvShowLatest";
 import { Layout } from "./Layout";
 import { UpComing } from "./UpComing";
 import { TopRated } from "./TopRated";
@@ -16,6 +16,9 @@ import { Popular } from "./Popular";
 import { Home } from "./Home";
 import PageNotFound from "./PageNotFound";
 import { Route, Routes } from "react-router-dom";
+import { TvShowPopular } from "./components/TvShowPopular";
+import { TvShowTopRated } from "./components/TvShowTopRated";
+import TvShowDetails from "./components/TvShowDetails";
 
 function App() {
   // const [data, setData] = useState("");
@@ -35,7 +38,12 @@ function App() {
       {/* <Layout /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route exact path="/" element={<Home />}></Route>
+          <Route exact path="/" element={<Home />} />
+          <Route path="tvshow">
+            <Route path="/tvshow/latest" element={<TvShowLatest />} />
+            <Route path="/tvshow/popular" element={<TvShowPopular />} />
+            <Route path="/tvshow/top-rated" element={<TvShowTopRated />} />
+          </Route>
           <Route path="/movie">
             <Route path="/movie/now-playing" element={<NowPlaying />} />
             <Route path="/movie/up-coming" element={<UpComing />} />
@@ -45,6 +53,10 @@ function App() {
           <Route
             path="/movie/movie-detail/:movieid"
             element={<MovieDetails />}
+          />
+          <Route
+            path="/tvshow/show-detail/:movieid"
+            element={<TvShowDetails />}
           />
         </Route>
 

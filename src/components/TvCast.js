@@ -2,16 +2,16 @@ import { useParams } from "react-router-dom";
 import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
-const MovieCast = () => {
+const TvCast = () => {
   const { movieid } = useParams();
   const [data, setData] = useState([]);
-  const apiMovieCast = api.get(`movie/${movieid}/credits`, {
+  const apiTvCast = api.get(`tv/${movieid}/credits`, {
     params: { api_key },
   });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiMovieCast;
+      const response = await apiTvCast;
       setData(response.data.cast);
     };
     data();
@@ -38,8 +38,10 @@ const MovieCast = () => {
             </li>
             <li>
               <p>
-                <b className="actress-name">{cast.name}</b> As{" "}
-                <span className="charector-name">{cast.character}</span>
+                <b className="actress-name">{cast.name}</b>
+                {cast.character && (
+                  <span className="charecter-name"> As {cast.character}</span>
+                )}
               </p>
             </li>
           </ul>
@@ -49,4 +51,4 @@ const MovieCast = () => {
   );
 };
 
-export default MovieCast;
+export default TvCast;

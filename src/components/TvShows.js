@@ -1,42 +1,40 @@
 import { Link } from "react-router-dom";
 
-export const Movies = ({ movieArray }) => {
+export const TvShows = ({ movieArray }) => {
   // console.log("MOvie Array", movieArray);
 
   return (
     <>
       <div className="movieContainer">
-        {movieArray.map((movieObj) => {
+        {movieArray.map((tvshowObj) => {
           return (
             <div className="movieBox">
               <div>
-                <Link to={`/movie/movie-detail/${movieObj.id}`}>
+                <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                   <div>
                     <img
                       className="image-box"
-                      src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                      alt={movieObj.title || movieObj.name}
+                      src={`https://image.tmdb.org/t/p/w300/${tvshowObj.poster_path}`}
+                      alt={tvshowObj.name}
                     />
                   </div>
                 </Link>
               </div>
               <div className="movie-name">
-                <Link to={`/movie/movie-detail/${movieObj.id}`}>
-                  <div className="movie-title">
-                    {movieObj.title || movieObj.name}
-                  </div>
+                <Link to={`/movie/movie-detail/${tvshowObj.id}`}>
+                  <div className="movie-title">{tvshowObj.name}</div>
 
                   <div className="lang">
-                    <Lang movieLang={movieObj.original_language} />
+                    <Lang movieLang={tvshowObj.original_language} />
                   </div>
                 </Link>
               </div>
               <div className="movie-quick-details">
                 <div className="rating">
                   <div className="vote-count">
-                    Vote&#160;&#58;&#160;{movieObj.vote_count}
+                    Vote&#160;&#58;&#160;{tvshowObj.vote_count}
                   </div>
-                  <div className="vote-avarage">{movieObj.vote_average}</div>
+                  <div className="vote-avarage">{tvshowObj.vote_average}</div>
                 </div>
               </div>
             </div>
@@ -46,7 +44,7 @@ export const Movies = ({ movieArray }) => {
     </>
   );
 };
-export function FirstFewMovie({ movieArray }) {
+export function FirstFewTvShows({ movieArray }) {
   // console.log(movieArray);
 
   return (

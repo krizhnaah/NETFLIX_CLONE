@@ -21,6 +21,7 @@ import { TvShowPopular } from "./components/TvShowPopular";
 import { TvShowTopRated } from "./components/TvShowTopRated";
 import TvShowDetails from "./components/TvShowDetails";
 import Person from "./components/person/Person";
+import GenreBased from "./components/genrebased/GenreBased";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
             path="/movie/movie-detail/:movieid"
             element={<MovieDetails />}
           />
-          <Route path="/movies/:moviegenre" element={<TvShowDetails />} />
+          <Route path="/movies/:moviegenre" element={<GenreBased />} />
           <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
           <Route path="/tvshow/:tvgenre" element={<TvShowDetails />} />
           <Route path="/person/:id" element={<Person />} />

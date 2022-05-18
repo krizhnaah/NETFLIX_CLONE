@@ -18,7 +18,7 @@ const MovieDetails = () => {
       setData(response.data);
     };
     data();
-  }, []);
+  }, [movieid]);
 
   let hour = Math.floor(data.runtime / 60);
   let minutes = data.runtime % 60;
@@ -54,7 +54,7 @@ const MovieDetails = () => {
                     data.genres.map((genre) => {
                       return (
                         <li className="btn">
-                          <Link to={`/movies/${genre.name}`}>{genre.name}</Link>
+                          <Link to={`/movies/${genre.id}`}>{genre.name}</Link>
                         </li>
                       );
                     })}

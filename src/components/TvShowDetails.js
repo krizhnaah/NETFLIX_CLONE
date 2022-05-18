@@ -20,7 +20,7 @@ const TvShowDetails = () => {
       setData(response.data);
     };
     data();
-  }, []);
+  }, [tvid]);
 
   // const data1 = async () => {
   //   const response = await apiMovieDetail;
@@ -42,6 +42,7 @@ const TvShowDetails = () => {
           style={{
             background: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path}),rgba(0,0,0,0.7)`,
             backgroundBlendMode: "multiply",
+            backgroundSize: "cover",
             width: "calc(100vw-10px)",
           }}
         >
@@ -63,7 +64,7 @@ const TvShowDetails = () => {
                     data.genres.map((genre) => {
                       return (
                         <li className="btn">
-                          <Link to={`/tvshow/${genre.name}`}>{genre.name}</Link>
+                          <Link to={`/tvshow/${genre.id}`}>{genre.name}</Link>
                         </li>
                       );
                     })}

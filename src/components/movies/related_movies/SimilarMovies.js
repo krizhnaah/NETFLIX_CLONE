@@ -16,7 +16,7 @@ export const SimilarMovies = () => {
       setData(response.data.results);
     };
     data();
-  }, []);
+  }, [movie.movieid]);
 
   return (
     <>

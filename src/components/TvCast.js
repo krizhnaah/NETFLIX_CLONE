@@ -15,7 +15,7 @@ const TvCast = () => {
       setData(response.data.cast);
     };
     data();
-  }, []);
+  }, [tvid]);
 
   return (
     <>

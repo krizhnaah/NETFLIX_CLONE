@@ -15,7 +15,7 @@ const TvCrew = ({ creator }) => {
       setData(response.data.crew);
     };
     data();
-  }, []);
+  }, [tvid]);
 
   return (
     <ul className="credit-crew">

@@ -15,7 +15,7 @@ const MovieCrew = () => {
       setData(response.data.crew);
     };
     data();
-  }, []);
+  }, [movieid]);
   return (
     <ul className="credit-crew">
       {(data.length < 30 &&

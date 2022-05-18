@@ -15,7 +15,7 @@ const MovieCast = () => {
       setData(response.data.cast);
     };
     data();
-  }, []);
+  }, [movieid]);
 
   return (
     <>

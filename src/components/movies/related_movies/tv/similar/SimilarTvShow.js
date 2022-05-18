@@ -16,7 +16,7 @@ export const SimilarTvShow = () => {
       setData(response.data.results);
     };
     data();
-  }, []);
+  }, [tv.tvid]);
 
   return (
     <>

@@ -47,8 +47,6 @@ export const Movies = ({ movieArray }) => {
   );
 };
 export function FirstFewMovie({ movieArray }) {
-  // console.log(movieArray);
-
   return (
     <div className="movieContainer-home">
       {movieArray.map((movieObj) => {
@@ -82,6 +80,31 @@ export function FirstFewMovie({ movieArray }) {
                 <div className="vote-avarage">{movieObj.vote_average}</div>
               </div>
             </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+export function SimilarMovieMap({ movieArray }) {
+  return (
+    <div className="movieContainer-similar">
+      {movieArray.map((movieObj) => {
+        return (
+          <div className="movieBox--similar">
+            <div>
+              <Link to={`/movie/movie-detail/${movieObj.id}`}>
+                <div>
+                  <img
+                    className="image-box-similar"
+                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
+                    alt={movieObj.title || movieObj.name}
+                  />
+                </div>
+              </Link>
+            </div>
+            <div className="movie-title">{movieObj.name || movieObj.title}</div>
           </div>
         );
       })}

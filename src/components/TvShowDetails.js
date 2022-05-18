@@ -5,11 +5,12 @@ import MovieCast from "./MovieCast";
 import MovieCrew from "./MovieCrew";
 import TvCast from "./TvCast";
 import TvCrew from "./TvCrew";
+import { SimilarTvShow } from "./movies/related_movies/tv/similar/SimilarTvShow";
 
 const TvShowDetails = () => {
-  const { movieid } = useParams();
+  const { tvid } = useParams();
   const [data, setData] = useState({});
-  const apiTvShowDetails = api.get(`tv/${movieid}`, {
+  const apiTvShowDetails = api.get(`tv/${tvid}`, {
     params: { api_key },
   });
 
@@ -20,11 +21,6 @@ const TvShowDetails = () => {
     };
     data();
   }, []);
-
-  console.log("tvshow details", data);
-
-  let hour = Math.floor(data.runtime / 60);
-  let minutes = data.runtime % 60;
 
   // const data1 = async () => {
   //   const response = await apiMovieDetail;
@@ -37,8 +33,6 @@ const TvShowDetails = () => {
   //   console.log("Inside useEffect");
   // }, []);
   // if (!data1) return <div>Loading..</div>;
-
-  console.log("TvSHow Id", data);
 
   return (
     <>
@@ -96,6 +90,9 @@ const TvShowDetails = () => {
         </div>
         <div className="casting-crew">
           <TvCast />
+        </div>
+        <div>
+          <SimilarTvShow />
         </div>
       </div>
       ;

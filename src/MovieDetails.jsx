@@ -3,7 +3,7 @@ import api, { api_key } from "./axios";
 import { useEffect, useState } from "react";
 import MovieCast from "./components/MovieCast";
 import MovieCrew from "./components/MovieCrew";
-import { RelatedMovies } from "./components/movies/related_movies/RelatedMovies";
+import { SimilarMovies } from "./components/movies/related_movies/SimilarMovies";
 
 const MovieDetails = () => {
   const { movieid } = useParams();
@@ -22,18 +22,6 @@ const MovieDetails = () => {
 
   let hour = Math.floor(data.runtime / 60);
   let minutes = data.runtime % 60;
-
-  // const data1 = async () => {
-  //   const response = await apiMovieDetail;
-  //   console.log("response.data", response.data);
-  //   setData(response.data);
-  // };
-  // console.log("calling the data function");
-  // data1();
-  // useEffect(() => {
-  //   console.log("Inside useEffect");
-  // }, []);
-  // if (!data1) return <div>Loading..</div>;
 
   console.log("movie Id", data);
 
@@ -95,7 +83,7 @@ const MovieDetails = () => {
           <MovieCast />
         </div>
         <div>
-          {/* <RelatedMovies movie_id={movieid} /> */}
+          <SimilarMovies />
         </div>
       </div>
       ;

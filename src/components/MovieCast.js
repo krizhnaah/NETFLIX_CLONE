@@ -38,8 +38,13 @@ const MovieCast = () => {
             </li>
             <li>
               <p>
-                <b className="actress-name">{cast.name}</b> As{" "}
-                <span className="charector-name">{cast.character}</span>
+                <b className="actress-name">{cast.name}</b>
+                {cast.character && (
+                  <span className="charector-name">
+                    {" "}
+                    {"(As)"} {cast.character}
+                  </span>
+                )}
               </p>
             </li>
           </ul>

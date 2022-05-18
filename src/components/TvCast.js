@@ -3,9 +3,9 @@ import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
 const TvCast = () => {
-  const { movieid } = useParams();
+  const { tvid } = useParams();
   const [data, setData] = useState([]);
-  const apiTvCast = api.get(`tv/${movieid}/credits`, {
+  const apiTvCast = api.get(`tv/${tvid}/credits`, {
     params: { api_key },
   });
 
@@ -40,7 +40,10 @@ const TvCast = () => {
               <p>
                 <b className="actress-name">{cast.name}</b>
                 {cast.character && (
-                  <span className="charecter-name"> As {cast.character}</span>
+                  <span className="charecter-name">
+                    {" "}
+                    {"(As)"} {cast.character}
+                  </span>
                 )}
               </p>
             </li>

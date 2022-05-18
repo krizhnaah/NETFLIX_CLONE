@@ -19,8 +19,8 @@
 }
 .casting-crew {
   width: 65vw;
-  margin: 5px 10px;
-  padding: 15px 5px;
+  margin: 20px 10px;
+  padding: 20px 5px;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -28,7 +28,7 @@
 }
 
 .casting-crew::-webkit-scrollbar {
-  height: 7px;
+  height: 5px;
 }
 
 .casting-crew::-webkit-scrollbar-track {
@@ -36,7 +36,7 @@
 }
 
 .casting-crew::-webkit-scrollbar-thumb {
-  background-color: grey;
+  background-color: lightgrey;
   border-radius: 10px;
 }
 

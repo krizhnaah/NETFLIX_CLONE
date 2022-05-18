@@ -3,9 +3,9 @@ import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
 const TvCrew = ({ creator }) => {
-  const { movieid } = useParams();
+  const { tvid } = useParams();
   const [data, setData] = useState([]);
-  const apiTvCrew = api.get(`tv/${movieid}/credits`, {
+  const apiTvCrew = api.get(`tv/${tvid}/credits`, {
     params: { api_key },
   });
 

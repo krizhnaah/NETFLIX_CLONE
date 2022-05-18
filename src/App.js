@@ -4,6 +4,8 @@ import "./pagenotfound.css";
 import "./movie-relatd.css";
 import "./Home-css.css";
 import "./css/cast_and_crew.css";
+import "./components/movies/related_movies/similar-movies.css";
+
 // import { useState, useEffect } from "react";
 // import api, { api_key } from "./axios";
 import MovieDetails from "./MovieDetails";
@@ -54,10 +56,7 @@ function App() {
             path="/movie/movie-detail/:movieid"
             element={<MovieDetails />}
           />
-          <Route
-            path="/tvshow/show-detail/:movieid"
-            element={<TvShowDetails />}
-          />
+          <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />

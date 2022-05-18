@@ -18,6 +18,10 @@
   color: white;
 }
 
+.movie-title {
+  font-weight: 600;
+}
+
 .movie-details-container {
   height: auto;
   background-color: black;
@@ -74,9 +78,13 @@
   position: relative;
 }
 
+.movieBox {
+  transition: all 200ms ease;
+}
+
 .movieBox:hover,
 .movieBox:focus-within {
-  transform: scale(1.03, 1.03);
+  transform: scale(1.05, 1.05);
 }
 
 .lang,

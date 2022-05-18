@@ -17,6 +17,11 @@
 .movie-cast p {
   padding: 10px 5px 20px 5px;
 }
+.movie-cast a:link,
+.movie-cast a:visited {
+  color: black;
+}
+
 .casting-crew {
   width: 65vw;
   margin: 20px 10px;

@@ -24,7 +24,7 @@ const TvCrew = ({ creator }) => {
           return (
             <>
               <li>
-                <Link to={`/credit/${crew.credit_id}`}>
+                <Link to={`/person/${crew.id}`}>
                   <h4>{crew.name}</h4>
                 </Link>
                 <p>{crew.job}</p>
@@ -37,7 +37,7 @@ const TvCrew = ({ creator }) => {
             return (
               <>
                 <li>
-                  <Link to={`/credit/${creator.credit_id}`}>
+                  <Link to={`/person/${creator.id}`}>
                     <h4>{creator.name}</h4>
                   </Link>
                   <p>Creator</p>

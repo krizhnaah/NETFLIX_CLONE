@@ -23,7 +23,7 @@ const MovieCrew = () => {
           return (
             <>
               <li>
-                <Link to={`/credit/${crew.credit_id}`}>
+                <Link to={`/person/${crew.id}`}>
                   <h4>{crew.name}</h4>
                 </Link>
                 <p>{crew.job}</p>
@@ -42,7 +42,7 @@ const MovieCrew = () => {
               return (
                 <>
                   <li>
-                    <Link to={`/credit/${crew.credit_id}`}>
+                    <Link to={`/person/${crew.id}`}>
                       <h4>{crew.name}</h4>
                     </Link>
                     <p>{crew.job}</p>

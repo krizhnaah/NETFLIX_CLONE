@@ -74,6 +74,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding: 5px;
   gap: 10px;
   color: white;
   margin: 10px 15px;

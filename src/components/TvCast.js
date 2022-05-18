@@ -38,7 +38,7 @@ const TvCast = () => {
             </li>
             <li>
               <p>
-                <Link to={`/credit/${cast.credit_id}`}>
+                <Link to={`/person/${cast.id}`}>
                   <b className="actress-name">{cast.name}</b>
                 </Link>
                 {cast.character && (

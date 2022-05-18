@@ -20,6 +20,7 @@ import { Route, Routes } from "react-router-dom";
 import { TvShowPopular } from "./components/TvShowPopular";
 import { TvShowTopRated } from "./components/TvShowTopRated";
 import TvShowDetails from "./components/TvShowDetails";
+import Person from "./components/person/Person";
 
 function App() {
   return (
@@ -45,7 +46,7 @@ function App() {
           <Route path="/movies/:moviegenre" element={<TvShowDetails />} />
           <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
           <Route path="/tvshow/:tvgenre" element={<TvShowDetails />} />
-          <Route path="/person/:creditid" element
+          <Route path="/person/:id" element={<Person />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />

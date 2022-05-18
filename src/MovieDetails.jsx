@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api, { api_key } from "./axios";
 import { useEffect, useState } from "react";
 import MovieCast from "./components/MovieCast";
@@ -52,7 +52,11 @@ const MovieDetails = () => {
                 <li className="genres-list">
                   {data.genres?.length > 0 &&
                     data.genres.map((genre) => {
-                      return <li>{genre.name}</li>;
+                      return (
+                        <li className="btn">
+                          <Link to={`/movies/${genre.name}`}>{genre.name}</Link>
+                        </li>
+                      );
                     })}
                 </li>
                 <li>

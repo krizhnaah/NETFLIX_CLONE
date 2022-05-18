@@ -1,6 +1,6 @@
 .movieContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(160px * 1.25), 1fr));
   grid-auto-flow: row;
 }
 
@@ -29,9 +29,9 @@
 }
 
 .image-box {
-  width: 150px;
-  height: 225px;
-  border-radius: 10px;
+  width: calc(150px * 1.25);
+  height: calc(225px * 1.25);
+  border-radius: 15px 15px 0 0;
 }
 
 .movie-quick-details {
@@ -63,28 +63,29 @@
 .movie-quick-details,
 .movie-name {
   align-self: flex-start;
+  padding: 0 8px 5px;
 }
 
 .movieBox {
   height: calc(100%-10px);
-  width: 150px;
+  width: calc(150px * 1.25);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   color: white;
   margin: 10px 15px;
   position: relative;
-}
-
-.movieBox {
-  transition: all 200ms ease;
+  transition: all 130ms ease;
 }
 
 .movieBox:hover,
 .movieBox:focus-within {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.03, 1.03);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25), 2px 4px 4px rgba(0, 0, 0, 0.45),
+    -0.1px -0.1px 2px rgba(0, 0, 0, 0.25), -2px -4px 4px rgba(0, 0, 0, 0.45);
 }
 
 .lang,
@@ -112,6 +113,7 @@
 ul.movie-name-with-quickdetails {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 /* ul.movie-name-with-quickdetails li li {

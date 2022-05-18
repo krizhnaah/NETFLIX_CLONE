@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
@@ -23,7 +23,9 @@ const MovieCrew = () => {
           return (
             <>
               <li>
-                <h4>{crew.name}</h4>
+                <Link to={`/credit/${crew.credit_id}`}>
+                  <h4>{crew.name}</h4>
+                </Link>
                 <p>{crew.job}</p>
               </li>
             </>
@@ -40,7 +42,9 @@ const MovieCrew = () => {
               return (
                 <>
                   <li>
-                    <h4>{crew.name}</h4>
+                    <Link to={`/credit/${crew.credit_id}`}>
+                      <h4>{crew.name}</h4>
+                    </Link>
                     <p>{crew.job}</p>
                   </li>
                 </>

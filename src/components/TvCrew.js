@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
@@ -17,8 +17,6 @@ const TvCrew = ({ creator }) => {
     data();
   }, []);
 
-  console.log("tv crew", data);
-
   return (
     <ul className="credit-crew">
       {(data.length < 30 &&
@@ -26,7 +24,9 @@ const TvCrew = ({ creator }) => {
           return (
             <>
               <li>
-                <h4>{crew.name}</h4>
+                <Link to={`/credit/${crew.credit_id}`}>
+                  <h4>{crew.name}</h4>
+                </Link>
                 <p>{crew.job}</p>
               </li>
             </>
@@ -37,7 +37,9 @@ const TvCrew = ({ creator }) => {
             return (
               <>
                 <li>
-                  <h4>{creator.name}</h4>
+                  <Link to={`/credit/${creator.credit_id}`}>
+                    <h4>{creator.name}</h4>
+                  </Link>
                   <p>Creator</p>
                 </li>
               </>

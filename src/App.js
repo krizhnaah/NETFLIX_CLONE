@@ -5,9 +5,8 @@ import "./movie-relatd.css";
 import "./Home-css.css";
 import "./css/cast_and_crew.css";
 import "./components/movies/related_movies/similar-movies.css";
+import "./components/genrebased/genrebased.css";
 
-// import { useState, useEffect } from "react";
-// import api, { api_key } from "./axios";
 import MovieDetails from "./MovieDetails";
 import { TvShowLatest } from "./components/TvShowLatest";
 import { Layout } from "./Layout";
@@ -23,21 +22,8 @@ import { TvShowTopRated } from "./components/TvShowTopRated";
 import TvShowDetails from "./components/TvShowDetails";
 
 function App() {
-  // const [data, setData] = useState("");
-  // const apiUpComing = api.get("movie/upcoming", { params: { api_key } });
-
-  // useEffect(() => {
-  //   const data = async () => {
-  //     const response = await apiUpComing;
-  //     setData(response.data.results);
-  //   };
-  //   data();
-  // });
-
-  // console.log(data);
   return (
     <div className="page-background">
-      {/* <Layout /> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" element={<Home />} />
@@ -56,7 +42,10 @@ function App() {
             path="/movie/movie-detail/:movieid"
             element={<MovieDetails />}
           />
+          <Route path="/movies/:moviegenre" element={<TvShowDetails />} />
           <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
+          <Route path="/tvshow/:tvgenre" element={<TvShowDetails />} />
+          <Route path="/person/:creditid" element
         </Route>
 
         <Route path="*" element={<PageNotFound />} />

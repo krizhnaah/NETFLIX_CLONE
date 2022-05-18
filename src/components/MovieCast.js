@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api, { api_key } from "../axios";
 import { useEffect, useState } from "react";
 
@@ -38,7 +38,9 @@ const MovieCast = () => {
             </li>
             <li>
               <p>
-                <b className="actress-name">{cast.name}</b>
+                <Link to={`/credit/${cast.credit_id}`}>
+                  <b className="actress-name">{cast.name}</b>
+                </Link>
                 {cast.character && (
                   <span className="charector-name">
                     {" "}

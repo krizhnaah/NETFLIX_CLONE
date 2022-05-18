@@ -117,10 +117,6 @@ ul.movie-name-with-quickdetails {
   align-items: center;
 }
 
-/* ul.movie-name-with-quickdetails li li {
-  list-style-type: georgian;
-} */
-
 li.genres-list {
   display: flex;
   gap: 5px;

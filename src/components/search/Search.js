@@ -1,53 +1,53 @@
-import { useEffect, useState } from "react";
 import api, { api_key } from "../../axios";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Movies } from "../../Movies";
 import { TvShows } from "../TvShows";
 
-const GenreBasedMovie = () => {
-  const { moviegenre } = useParams();
+export const MovieSearch = () => {
   const [data, setData] = useState([]);
-  const apiGenreBased = api.get(`/discover/movie?with_genres=${moviegenre}`, {
+  const { keyword } = useParams();
+  const apiMovieSearch = api.get(`/search/movie?query=${keyword}`, {
     params: { api_key },
   });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiGenreBased;
+      const response = await apiMovieSearch;
       setData(response.data.results);
     };
     data();
-  }, [moviegenre]);
+  }, [keyword]);
 
   return (
     <>
       <div className="page-container">
+        <h3 className="similar-h3">Search For "{keyword}" On Movies</h3>
         <Movies movieArray={data} />
       </div>
     </>
   );
 };
 
-export default GenreBasedMovie;
-
-export const GenreBasedTV = () => {
-  const { tvgenre } = useParams();
+export const TvSearch = () => {
   const [data, setData] = useState([]);
-  const apiGenreBased = api.get(`/discover/tv?with_genres=${tvgenre}`, {
+  const { keyword } = useParams();
+  const apiTvSearch = api.get(`/search/tv?query=${keyword}`, {
     params: { api_key },
   });
 
   useEffect(() => {
     const data = async () => {
-      const response = await apiGenreBased;
+      const response = await apiTvSearch;
       setData(response.data.results);
     };
     data();
-  }, [tvgenre]);
+  }, [keyword]);
 
   return (
     <>
       <div className="page-container">
+        <h3 className="similar-h3">Search For "{keyword}" On TvShows</h3>
         <TvShows movieArray={data} />
       </div>
     </>

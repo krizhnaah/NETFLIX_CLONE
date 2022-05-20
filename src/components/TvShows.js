@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 export const TvShows = ({ movieArray }) => {
-  // console.log("MOvie Array", movieArray);
-
   return (
     <>
       <div className="movieContainer">
@@ -12,16 +10,25 @@ export const TvShows = ({ movieArray }) => {
               <div>
                 <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                   <div>
-                    <img
-                      className="image-box"
-                      src={`https://image.tmdb.org/t/p/w300/${tvshowObj.poster_path}`}
-                      alt={tvshowObj.name}
-                    />
+                    {(tvshowObj.poster_path && (
+                      <img
+                        className="image-box"
+                        src={`https://image.tmdb.org/t/p/w300/${tvshowObj.poster_path}`}
+                        alt={tvshowObj.title || tvshowObj.name}
+                      />
+                    )) ||
+                      (!tvshowObj.poster_path && (
+                        <img
+                          className="image-box"
+                          src={require("../Images/credit-image.png")}
+                          alt={tvshowObj.title || tvshowObj.name}
+                        />
+                      ))}
                   </div>
                 </Link>
               </div>
               <div className="movie-name">
-                <Link to={`/movie/movie-detail/${tvshowObj.id}`}>
+                <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                   <div className="movie-title">{tvshowObj.name}</div>
 
                   <div className="lang">
@@ -45,39 +52,46 @@ export const TvShows = ({ movieArray }) => {
   );
 };
 export function FirstFewTvShows({ movieArray }) {
-  // console.log(movieArray);
-
   return (
     <div className="movieContainer-home">
-      {movieArray.map((movieObj) => {
+      {movieArray.map((tvshowObj) => {
         return (
           <div className="movieBox">
             <div>
-              <Link to={`/movie/movie-detail/${movieObj.id}`}>
+              <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                 <div>
-                  <img
-                    className="image-box"
-                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                    alt={movieObj.title || movieObj.name}
-                  />
+                  {(tvshowObj.poster_path && (
+                    <img
+                      className="image-box"
+                      src={`https://image.tmdb.org/t/p/w300/${tvshowObj.poster_path}`}
+                      alt={tvshowObj.title || tvshowObj.name}
+                    />
+                  )) ||
+                    (!tvshowObj.poster_path && (
+                      <img
+                        className="image-box"
+                        src={require("../Images/credit-image.png")}
+                        alt={tvshowObj.title || tvshowObj.name}
+                      />
+                    ))}
                 </div>
               </Link>
             </div>
             <div className="movie-name">
-              <Link to={`/movie/movie-detail/${movieObj.id}`}>
+              <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                 <div className="movie-title">
-                  {movieObj.name || movieObj.title}
+                  {tvshowObj.name || tvshowObj.title}
                 </div>
 
                 <div className="lang">
-                  <Lang movieLang={movieObj.original_language} />
+                  <Lang movieLang={tvshowObj.original_language} />
                 </div>
               </Link>
             </div>
             <div className="movie-quick-details">
               <div className="rating">
-                <div>Votes&#160;&#58;&#160;{movieObj.vote_count}</div>
-                <div className="vote-avarage">{movieObj.vote_average}</div>
+                <div>Votes&#160;&#58;&#160;{tvshowObj.vote_count}</div>
+                <div className="vote-avarage">{tvshowObj.vote_average}</div>
               </div>
             </div>
           </div>
@@ -90,21 +104,32 @@ export function FirstFewTvShows({ movieArray }) {
 export function SimilarTvShowMap({ movieArray }) {
   return (
     <div className="movieContainer-similar">
-      {movieArray.map((movieObj) => {
+      {movieArray.map((tvshowObj) => {
         return (
           <div className="movieBox--similar">
             <div>
-              <Link to={`/movie/movie-detail/${movieObj.id}`}>
+              <Link to={`/tvshow/show-detail/${tvshowObj.id}`}>
                 <div>
-                  <img
-                    className="image-box-similar"
-                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                    alt={movieObj.title || movieObj.name}
-                  />
+                  {(tvshowObj.poster_path && (
+                    <img
+                      className="image-box-similar"
+                      src={`https://image.tmdb.org/t/p/w300/${tvshowObj.poster_path}`}
+                      alt={tvshowObj.title || tvshowObj.name}
+                    />
+                  )) ||
+                    (!tvshowObj.poster_path && (
+                      <img
+                        className="image-box-similar"
+                        src={require("../Images/credit-image.png")}
+                        alt={tvshowObj.title || tvshowObj.name}
+                      />
+                    ))}
                 </div>
               </Link>
             </div>
-            <div className="movie-title">{movieObj.name || movieObj.title}</div>
+            <div className="movie-title">
+              {tvshowObj.name || tvshowObj.title}
+            </div>
           </div>
         );
       })}
@@ -132,6 +157,22 @@ const Lang = ({ movieLang }) => {
       return "Polish";
     case "ko":
       return "Korean";
+    case "sv":
+      return "Swedish";
+    case "pt":
+      return "Portuguese";
+    case "tl":
+      return "Tagalog";
+    case "zh":
+      return "Mandarin";
+    case "nl":
+      return "Dutch";
+    case "ms":
+      return "Malay";
+    case "ml":
+      return "Malay";
+    case "sk":
+      return "Slovak";
     default:
       return movieLang;
   }

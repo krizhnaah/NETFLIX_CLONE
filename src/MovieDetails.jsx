@@ -83,7 +83,7 @@ const MovieDetails = () => {
             </div>
           </div>
         </div>
-        <div className="casting-crew">
+        <div>
           <MovieCast />
         </div>
         <div>

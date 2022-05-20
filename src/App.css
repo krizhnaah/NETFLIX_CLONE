@@ -6,10 +6,11 @@
 }
 
 #root {
-  width: calc(100vw-5px);
+  width: calc(100vw);
 }
 .page-background {
   background-color: rgb(14, 14, 14);
+  min-height: 100vh;
 }
 .page-container {
   width: 90vw;

@@ -20,9 +20,14 @@ export const SimilarMovies = () => {
 
   return (
     <>
-      <div className="related related-movies">
-        <SimilarMovieMap movieArray={data} />
-      </div>
+      {data.length > 0 && (
+        <div className="related-container">
+          <div>
+            <h3 className="similar-h3">Recommended For You</h3>
+          </div>
+          <SimilarMovieMap movieArray={data} />
+        </div>
+      )}
     </>
   );
 };

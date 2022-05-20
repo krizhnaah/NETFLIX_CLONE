@@ -1,6 +1,6 @@
 .movieContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(160px * 1.25), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(calc(170px * 1.25), 1fr));
   grid-auto-flow: row;
 }
 
@@ -58,8 +58,8 @@
   width: 25px;
   border-radius: 50%;
   position: absolute;
-  left: -10px;
-  top: -10px;
+  left: -3px;
+  top: -3px;
 }
 .movie-quick-details,
 .movie-name {
@@ -75,12 +75,12 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 10px 10px 5px 10px;
   gap: 10px;
   color: white;
   margin: 10px 15px;
   position: relative;
-  transition: all 130ms ease;
+  transition: all 120ms ease;
 }
 
 .movieBox:hover,

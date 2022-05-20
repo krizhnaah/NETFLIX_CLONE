@@ -12,11 +12,20 @@ export const Movies = ({ movieArray }) => {
               <div>
                 <Link to={`/movie/movie-detail/${movieObj.id}`}>
                   <div>
-                    <img
-                      className="image-box"
-                      src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                      alt={movieObj.title || movieObj.name}
-                    />
+                    {(movieObj.poster_path && (
+                      <img
+                        className="image-box"
+                        src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
+                        alt={movieObj.title || movieObj.name}
+                      />
+                    )) ||
+                      (!movieObj.poster_path && (
+                        <img
+                          className="image-box"
+                          src={require("./Images/movie-tv-default.jpg")}
+                          alt={movieObj.title || movieObj.name}
+                        />
+                      ))}
                   </div>
                 </Link>
               </div>
@@ -55,11 +64,20 @@ export function FirstFewMovie({ movieArray }) {
             <div>
               <Link to={`/movie/movie-detail/${movieObj.id}`}>
                 <div>
-                  <img
-                    className="image-box"
-                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                    alt={movieObj.title || movieObj.name}
-                  />
+                  {(movieObj.poster_path && (
+                    <img
+                      className="image-box"
+                      src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
+                      alt={movieObj.title || movieObj.name}
+                    />
+                  )) ||
+                    (!movieObj.poster_path && (
+                      <img
+                        className="image-box"
+                        src={require("./Images/movie-tv-default.jpg")}
+                        alt={movieObj.title || movieObj.name}
+                      />
+                    ))}
                 </div>
               </Link>
             </div>
@@ -96,11 +114,20 @@ export function SimilarMovieMap({ movieArray }) {
             <div>
               <Link to={`/movie/movie-detail/${movieObj.id}`}>
                 <div>
-                  <img
-                    className="image-box-similar"
-                    src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
-                    alt={movieObj.title || movieObj.name}
-                  />
+                  {(movieObj.poster_path && (
+                    <img
+                      className="image-box"
+                      src={`https://image.tmdb.org/t/p/w300/${movieObj.poster_path}`}
+                      alt={movieObj.title || movieObj.name}
+                    />
+                  )) ||
+                    (!movieObj.poster_path && (
+                      <img
+                        className="image-box"
+                        src={require("./Images/movie-tv-default.jpg")}
+                        alt={movieObj.title || movieObj.name}
+                      />
+                    ))}
                 </div>
               </Link>
             </div>
@@ -132,6 +159,22 @@ const Lang = ({ movieLang }) => {
       return "Polish";
     case "ko":
       return "Korean";
+    case "sv":
+      return "Swedish";
+    case "pt":
+      return "Portuguese";
+    case "tl":
+      return "Tagalog";
+    case "zh":
+      return "Mandarin";
+    case "nl":
+      return "Dutch";
+    case "ms":
+      return "Malay";
+    case "ml":
+      return "Malay";
+    case "sk":
+      return "Slovak";
     default:
       return movieLang;
   }

@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
 
 export const Header = () => {
+  const [search, setSearch] = useState("");
+
   return (
     <>
       <nav className="header">
@@ -56,7 +60,25 @@ export const Header = () => {
         </div>
         <div className="search-profile-wrapper">
           <div className="search">
-            <span>Search</span>
+            <FaSearch className="search-icon" />
+            <form id="header-form">
+              <input
+                className="header-search"
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Enter to Search..."
+              />
+              <span>
+                <Link
+                  to={`/search/${search}`}
+                  className="search-btn"
+                  onClick={() => setSearch("")}
+                >
+                  Search
+                </Link>
+              </span>
+            </form>
           </div>
           <div className="profile">
             <span>Profile</span>

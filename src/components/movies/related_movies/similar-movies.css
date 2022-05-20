@@ -2,8 +2,8 @@
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding: 15px 0;
-  margin: 25px 0;
+  padding: 15px 15px;
+  margin: 15px 0 25px;
 }
 
 .movieContainer-similar::-webkit-scrollbar {
@@ -44,4 +44,9 @@
 .movieBox--similar:hover,
 .movieBox--similar:focus-within {
   transform: scale(1.05, 1.05);
+}
+
+.similar-h3 {
+  margin: 35px 0 15px;
+  color: white;
 }

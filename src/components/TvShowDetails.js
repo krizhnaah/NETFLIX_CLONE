@@ -90,7 +90,7 @@ const TvShowDetails = () => {
             </div>
           </div>
         </div>
-        <div className="casting-crew">
+        <div>
           <TvCast />
         </div>
         <div>

@@ -47,10 +47,18 @@ const TvShowDetails = () => {
           }}
         >
           <div className="poster-image-in-movie-details">
-            <img
-              src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
-              alt={data.title}
-            />
+            {(data.poster_path && (
+              <img
+                src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+                alt={data.title || data.name}
+              />
+            )) ||
+              (!data.poster_path && (
+                <img
+                  src={require("../Images/movie-tv-default.jpg")}
+                  alt={data.title || data.name}
+                />
+              ))}
           </div>
           <div className="movie-details">
             <div>

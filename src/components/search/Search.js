@@ -21,10 +21,12 @@ export const MovieSearch = () => {
 
   return (
     <>
-      <div className="page-container">
-        <h3 className="similar-h3">Search For "{keyword}" On Movies</h3>
-        <Movies movieArray={data} />
-      </div>
+      {data.length > 0 && (
+        <>
+          <h3 className="similar-h3">Search For "{keyword}" in Movies</h3>
+          <Movies movieArray={data} />
+        </>
+      )}
     </>
   );
 };
@@ -46,10 +48,12 @@ export const TvSearch = () => {
 
   return (
     <>
-      <div className="page-container">
-        <h3 className="similar-h3">Search For "{keyword}" On TvShows</h3>
-        <TvShows movieArray={data} />
-      </div>
+      {data.length > 0 && (
+        <>
+          <h3 className="similar-h3">Search For "{keyword}" in TvShows</h3>
+          <TvShows movieArray={data} />
+        </>
+      )}
     </>
   );
 };

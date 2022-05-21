@@ -20,7 +20,7 @@ export const TvShows = ({ movieArray }) => {
                       (!tvshowObj.poster_path && (
                         <img
                           className="image-box"
-                          src={require("../Images/credit-image.png")}
+                          src={require("../Images/movie-tv-default.jpg")}
                           alt={tvshowObj.title || tvshowObj.name}
                         />
                       ))}
@@ -70,7 +70,7 @@ export function FirstFewTvShows({ movieArray }) {
                     (!tvshowObj.poster_path && (
                       <img
                         className="image-box"
-                        src={require("../Images/credit-image.png")}
+                        src={require("../Images/movie-tv-default.jpg")}
                         alt={tvshowObj.title || tvshowObj.name}
                       />
                     ))}
@@ -120,7 +120,7 @@ export function SimilarTvShowMap({ movieArray }) {
                     (!tvshowObj.poster_path && (
                       <img
                         className="image-box-similar"
-                        src={require("../Images/credit-image.png")}
+                        src={require("../Images/movie-tv-default.jpg")}
                         alt={tvshowObj.title || tvshowObj.name}
                       />
                     ))}

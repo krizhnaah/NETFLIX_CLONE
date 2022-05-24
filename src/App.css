@@ -6,7 +6,7 @@
 }
 
 #root {
-  width: calc(100vw);
+  width: calc(100%);
 }
 .page-background {
   background-color: rgb(14, 14, 14);

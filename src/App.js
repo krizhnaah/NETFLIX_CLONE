@@ -6,6 +6,8 @@ import "./Home-css.css";
 import "./css/cast_and_crew.css";
 import "./components/movies/related_movies/similar-movies.css";
 import "./components/genrebased/genrebased.css";
+import "./components/person/person.css";
+import "./components/person/person-movie-tv-credits.css";
 
 import MovieDetails from "./MovieDetails";
 import { TvShowLatest } from "./components/TvShowLatest";
@@ -50,7 +52,7 @@ function App() {
           <Route path="/movies/:moviegenre" element={<GenreBasedMovie />} />
           <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
           <Route path="/tvshow/:tvgenre" element={<GenreBasedTV />} />
-          <Route path="/person/:id" element={<Person />} />
+          <Route path="/person/:personid" element={<Person />} />
           <Route path="/search/:keyword" element={<Result />} />
         </Route>
 

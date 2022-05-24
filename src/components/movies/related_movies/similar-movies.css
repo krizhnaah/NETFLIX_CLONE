@@ -6,6 +6,8 @@
   margin: 15px 0 25px;
 }
 
+/* ============================similar scrollbar===================================== */
+
 .movieContainer-similar::-webkit-scrollbar {
   height: 5px;
 }

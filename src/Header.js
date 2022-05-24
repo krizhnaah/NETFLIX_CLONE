@@ -5,6 +5,16 @@ import { useState } from "react";
 export const Header = () => {
   const [search, setSearch] = useState("");
 
+  function handleSeacrch() {
+    let headerForm = document.getElementById("header-form");
+
+    if (headerForm.style.display === "flex") {
+      headerForm.style.display = "none";
+    } else {
+      headerForm.style.display = "flex";
+    }
+  }
+
   return (
     <>
       <nav className="header">
@@ -19,9 +29,6 @@ export const Header = () => {
               <li>
                 <Link to={"/"}>Tv Show</Link>
                 <ul className="tv-show-menu">
-                  <li>
-                    <Link to={"/tvshow/latest"}>Latest</Link>
-                  </li>
                   <li>
                     <Link to={"/tvshow/popular"}>Popular</Link>
                   </li>
@@ -60,22 +67,24 @@ export const Header = () => {
         </div>
         <div className="search-profile-wrapper">
           <div className="search">
-            <FaSearch className="search-icon" />
+            <FaSearch className="search-icon" onClick={handleSeacrch} />
+
             <form id="header-form">
               <input
                 className="header-search"
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Enter to Search..."
+                placeholder="ENTER HERE TO SEARCH ......."
               />
+
               <span>
                 <Link
                   to={`/search/${search}`}
                   className="search-btn"
                   onClick={() => setSearch("")}
                 >
-                  Search
+                  <input type="submit" value="Search" />
                 </Link>
               </span>
             </form>

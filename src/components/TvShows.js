@@ -173,6 +173,8 @@ const Lang = ({ movieLang }) => {
       return "Malay";
     case "sk":
       return "Slovak";
+    case "ta":
+      return "Tamil";
     default:
       return movieLang;
   }

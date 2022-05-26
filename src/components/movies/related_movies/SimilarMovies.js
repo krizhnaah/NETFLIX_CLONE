@@ -20,7 +20,7 @@ export const SimilarMovies = () => {
 
   return (
     <>
-      {data.length > 0 && (
+      {data?.length > 0 && (
         <div className="related-container">
           <div>
             <h3 className="similar-h3">Recommended For You</h3>

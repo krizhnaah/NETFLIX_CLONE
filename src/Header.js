@@ -82,7 +82,7 @@ export const Header = () => {
                 <Link
                   to={`/search/${search}`}
                   className="search-btn"
-                  onClick={() => setSearch("")}
+                  // onClick={() => setSearch("")}
                 >
                   <input type="submit" value="Search" />
                 </Link>

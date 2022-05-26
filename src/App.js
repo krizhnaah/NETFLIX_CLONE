@@ -8,6 +8,7 @@ import "./components/movies/related_movies/similar-movies.css";
 import "./components/genrebased/genrebased.css";
 import "./components/person/person.css";
 import "./components/person/person-movie-tv-credits.css";
+import "./components/search/search.css";
 
 import MovieDetails from "./MovieDetails";
 import { TvShowLatest } from "./components/TvShowLatest";
@@ -27,6 +28,11 @@ import GenreBasedMovie, {
   GenreBasedTV,
 } from "./components/genrebased/GenreBased";
 import Result from "./components/search/Result";
+import {
+  MovieSearch,
+  PersonSearch,
+  TvSearch,
+} from "./components/search/Search";
 
 function App() {
   return (
@@ -34,8 +40,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route exact path="/" element={<Home />} />
-          <Route path="tvshow">
-            <Route path="/tvshow/latest" element={<TvShowLatest />} />
+          <Route path="/tvshow">
             <Route path="/tvshow/popular" element={<TvShowPopular />} />
             <Route path="/tvshow/top-rated" element={<TvShowTopRated />} />
           </Route>
@@ -53,7 +58,21 @@ function App() {
           <Route path="/tvshow/show-detail/:tvid" element={<TvShowDetails />} />
           <Route path="/tvshow/:tvgenre" element={<GenreBasedTV />} />
           <Route path="/person/:personid" element={<Person />} />
-          <Route path="/search/:keyword" element={<Result />} />
+          <Route path="/search/:keyword" element={<Result />}>
+            <Route
+              path="/search/:keyword/movies/:movie"
+              element={<MovieSearch />}
+            />
+            <Route path="/search/:keyword/tv/:tv" element={<TvSearch />} />
+            <Route
+              path="/search/:keyword/people/:people"
+              element={<PersonSearch />}
+            />
+            <Route
+              path="/search/:keyword/keyword/:keyword"
+              element={<PersonSearch />}
+            />
+          </Route>
         </Route>
 
         <Route path="*" element={<PageNotFound />} />

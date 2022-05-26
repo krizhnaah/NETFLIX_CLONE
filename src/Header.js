@@ -41,17 +41,17 @@ export const Header = () => {
                 <Link to={"/"}>Movie</Link>
                 <ul className="movie-menu">
                   <li>
-                    <Link to={"/movie/now-playing"}>Popular</Link>
+                    <Link to={"/movie/popular"}>Popular</Link>
                   </li>
                   <li>
-                    <Link to={"/movie/up-coming"}>Top Rated</Link>
+                    <Link to={"/movie/top-rated"}>Top Rated</Link>
                   </li>
                   <li>
                     {" "}
-                    <Link to={"/Movie/popular"}>Up Coming</Link>
+                    <Link to={"/Movie/up-coming"}>Up Coming</Link>
                   </li>
                   <li>
-                    <Link to={"/Movie/top-rated"}>Now Playing</Link>
+                    <Link to={"/Movie/now-playing"}>Now Playing</Link>
                   </li>
                 </ul>
               </li>

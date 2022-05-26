@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Movies } from "../../Movies";
 import { TvShows } from "../TvShows";
+import PersonList from "../person/PersonList";
 
 export const MovieSearch = () => {
   const [data, setData] = useState([]);
@@ -23,7 +24,6 @@ export const MovieSearch = () => {
     <>
       {data.length > 0 && (
         <>
-          <h3 className="similar-h3">Search For "{keyword}" in Movies</h3>
           <Movies movieArray={data} />
         </>
       )}
@@ -48,12 +48,32 @@ export const TvSearch = () => {
 
   return (
     <>
-      {data.length > 0 && (
+      {data?.length > 0 && (
         <>
-          <h3 className="similar-h3">Search For "{keyword}" in TvShows</h3>
           <TvShows movieArray={data} />
         </>
       )}
     </>
   );
+};
+
+export const PersonSearch = () => {
+  const [data, setData] = useState([]);
+  const { people } = useParams();
+
+  const apiPersonSearch = api.get(`/search/person?query=${people}`, {
+    params: { api_key },
+  });
+
+  useEffect(() => {
+    const data = async () => {
+      const response = await apiPersonSearch;
+      setData(response.data.results);
+    };
+    data();
+  }, [people]);
+
+  console.log("person", people, data);
+
+  return <>{data?.length && <PersonList data={data} />}</>;
 };

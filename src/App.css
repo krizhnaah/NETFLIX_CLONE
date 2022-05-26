@@ -47,3 +47,14 @@ a:link {
   background-color: grey;
   transform: scale(1.05, 1.05);
 }
+
+/* ==================preloader==================== */
+
+.pre-loader {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: 1000;
+  background: url("./Images/Pre-loader-Hourglass.gif") no-repeat center;
+  background-color: rgb(255, 255, 255);
+}

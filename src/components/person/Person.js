@@ -83,21 +83,19 @@ const Person = () => {
                         </div>
                       </td>
                     </tr>
-                    {data.place_of_birth && (
-                      <tr>
-                        <th>
-                          <div>Place Of Birth</div>
-                        </th>
-                        <td>
-                          <div>
-                            {(data.place_of_birth && (
-                              <>{data.place_of_birth}</>
-                            )) ||
-                              (!data.place_of_birth && <>No-data</>)}
-                          </div>
-                        </td>
-                      </tr>
-                    )}
+                    <tr>
+                      <th>
+                        <div>Place Of Birth</div>
+                      </th>
+                      <td>
+                        <div>
+                          {(data.place_of_birth && (
+                            <>{data.place_of_birth}</>
+                          )) ||
+                            (!data.place_of_birth && <>No-data</>)}
+                        </div>
+                      </td>
+                    </tr>
                     <tr>
                       <th>
                         <div>Proffesion</div>
@@ -121,9 +119,9 @@ const Person = () => {
               <h4>Biography</h4>
               <p>{data.biography}</p>
             </div>
-            <div className="cast-and-crew-ciredits-container">
-              <PersonMovieCastCredits />
-            </div>
+            {/* <div className="cast-and-crew-ciredits-container"> */}
+            <PersonMovieCastCredits />
+            {/* </div> */}
           </div>
         </div>
       </div>

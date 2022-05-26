@@ -23,8 +23,6 @@ const MovieDetails = () => {
   let hour = Math.floor(data.runtime / 60);
   let minutes = data.runtime % 60;
 
-  console.log("movie Id", data);
-
   return (
     <>
       <div className="movie-details-container">

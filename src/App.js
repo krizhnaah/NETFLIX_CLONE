@@ -29,6 +29,7 @@ import GenreBasedMovie, {
 } from "./components/genrebased/GenreBased";
 import Result from "./components/search/Result";
 import {
+  AllSearch,
   MovieSearch,
   PersonSearch,
   TvSearch,
@@ -59,6 +60,7 @@ function App() {
           <Route path="/tvshow/:tvgenre" element={<GenreBasedTV />} />
           <Route path="/person/:personid" element={<Person />} />
           <Route path="/search/:keyword" element={<Result />}>
+            <Route path="/search/:keyword/all" element={<AllSearch />} />
             <Route
               path="/search/:keyword/movies/:movie"
               element={<MovieSearch />}
@@ -66,10 +68,6 @@ function App() {
             <Route path="/search/:keyword/tv/:tv" element={<TvSearch />} />
             <Route
               path="/search/:keyword/people/:people"
-              element={<PersonSearch />}
-            />
-            <Route
-              path="/search/:keyword/keyword/:keyword"
               element={<PersonSearch />}
             />
           </Route>

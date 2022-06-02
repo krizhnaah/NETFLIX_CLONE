@@ -43,7 +43,9 @@
 }
 
 .category-list a {
-  padding: 1px 5px;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
 }
 .category-list {
   display: flex;
@@ -131,4 +133,12 @@ form#header-form span input:nth-child(1) {
   letter-spacing: 5px;
   border-width: 0;
   width: 200px;
+}
+
+input.header-search:focus {
+  outline: none;
+}
+
+.search-btn input:hover {
+  cursor: pointer;
 }

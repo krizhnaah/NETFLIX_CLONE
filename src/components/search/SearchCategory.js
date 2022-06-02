@@ -9,6 +9,10 @@ const SearchCategory = () => {
       <div>
         <ul className="sear-results">
           <li>
+            <Link to={`/search/${keyword}/all`}>All</Link>
+            <span>count</span>
+          </li>
+          <li>
             <Link to={`/search/${keyword}/movies/${keyword}`}>Movies</Link>
             <span>count</span>
           </li>
@@ -18,10 +22,6 @@ const SearchCategory = () => {
           </li>
           <li>
             <Link to={`/search/${keyword}/people/${keyword}`}>People</Link>
-            <span>count</span>
-          </li>
-          <li>
-            <Link to={`/search/${keyword}/keyword/${keyword}`}>Keyword</Link>
             <span>count</span>
           </li>
         </ul>

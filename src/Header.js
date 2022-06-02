@@ -80,7 +80,7 @@ export const Header = () => {
 
               <span>
                 <Link
-                  to={`/search/${search}`}
+                  to={`/search/${search}/all`}
                   className="search-btn"
                   // onClick={() => setSearch("")}
                 >

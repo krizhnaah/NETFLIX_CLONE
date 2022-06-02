@@ -8,20 +8,22 @@ const PersonList = ({ data }) => {
           <div>
             <ul className="person-box-ul">
               <li>
-                {(person.profile_path && (
-                  <img
-                    className="person-box-img"
-                    src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
-                    alt={person.name}
-                  />
-                )) ||
-                  (!person.profile_path && (
+                <Link to={`/person/${person.id}`}>
+                  {(person.profile_path && (
                     <img
                       className="person-box-img"
-                      src={require("../../Images/credit-image.png")}
+                      src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}
                       alt={person.name}
                     />
-                  ))}
+                  )) ||
+                    (!person.profile_path && (
+                      <img
+                        className="person-box-img"
+                        src={require("../../Images/credit-image.png")}
+                        alt={person.name}
+                      />
+                    ))}
+                </Link>
               </li>
               <li>
                 <p>

@@ -1,5 +1,6 @@
 .person-detail-box {
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   color: white;
   max-width: 100vw;
@@ -8,6 +9,8 @@
 .person-detail-box > div {
   padding: 30px;
   margin: 20px;
+}
+.person-image-in-person-details {
 }
 
 .person-image-container img {
@@ -60,6 +63,8 @@
 
 .person-overview {
   display: flex;
+  flex: 3;
+  overflow-x: auto;
   flex-direction: column;
   justify-content: flex-start;
 }
@@ -70,7 +75,7 @@
 
 .movieContainer-personpage {
   display: flex;
-  overflow-x: scroll;
+  overflow: auto;
 }
 
 .image-box-personpage {

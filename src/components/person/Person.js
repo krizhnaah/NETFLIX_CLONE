@@ -25,6 +25,13 @@ const Person = () => {
           <div className="person-image-in-person-details">
             <div>
               <div className="person-image-container">
+                <div
+                  style={{
+                    background: `url(https://image.tmdb.org/t/p/original/${data.profile_path})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                  }}
+                ></div>
                 {(data.profile_path && (
                   <img
                     src={`https://image.tmdb.org/t/p/w300/${data.profile_path}`}

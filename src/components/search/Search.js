@@ -22,7 +22,7 @@ export const MovieSearch = () => {
 
   return (
     <>
-      {data.length > 0 && (
+      {data?.length > 0 && (
         <>
           <Movies movieArray={data} />
         </>
@@ -59,9 +59,9 @@ export const TvSearch = () => {
 
 export const PersonSearch = () => {
   const [data, setData] = useState([]);
-  const { people } = useParams();
+  const { keyword } = useParams();
 
-  const apiPersonSearch = api.get(`/search/person?query=${people}`, {
+  const apiPersonSearch = api.get(`/search/person?query=${keyword}`, {
     params: { api_key },
   });
 
@@ -71,9 +71,17 @@ export const PersonSearch = () => {
       setData(response.data.results);
     };
     data();
-  }, [people]);
-
-  console.log("person", people, data);
+  }, [keyword]);
 
   return <>{data?.length && <PersonList data={data} />}</>;
+};
+
+export const AllSearch = () => {
+  return (
+    <>
+      <MovieSearch />
+      <TvSearch />
+      <PersonSearch />
+    </>
+  );
 };
